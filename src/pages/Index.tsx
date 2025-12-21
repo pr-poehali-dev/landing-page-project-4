@@ -56,25 +56,25 @@ const Index = () => {
     {
       direction: "Программирование",
       examples: [
-        { title: "Интернет-магазин на React", tech: "React, Node.js, MongoDB" },
-        { title: "Мобильное приложение для iOS", tech: "Swift, Firebase" },
-        { title: "CRM-система для бизнеса", tech: "Python, Django, PostgreSQL" }
+        { title: "Интернет-магазин на React", tech: "React, Node.js, MongoDB", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/34139ff8-2225-430d-8fc5-16a62c48cc03.jpg" },
+        { title: "Мобильное приложение для iOS", tech: "Swift, Firebase", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/790f6909-b66d-4026-80b0-e9a4aff44592.jpg" },
+        { title: "CRM-система для бизнеса", tech: "Python, Django, PostgreSQL", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/dae2ebed-924a-4c96-b1a4-b8e2c1eed6fb.jpg" }
       ]
     },
     {
       direction: "Дизайн",
       examples: [
-        { title: "Редизайн корпоративного сайта", tech: "Figma, UI/UX" },
-        { title: "Брендинг и фирменный стиль", tech: "Adobe Illustrator" },
-        { title: "Анимированная инфографика", tech: "After Effects" }
+        { title: "Редизайн корпоративного сайта", tech: "Figma, UI/UX", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/34339b38-eaf7-4671-8ca9-d69159abb276.jpg" },
+        { title: "Брендинг и фирменный стиль", tech: "Adobe Illustrator", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/6475e15b-0d20-4171-939f-e8728fb62f30.jpg" },
+        { title: "Анимированная инфографика", tech: "After Effects", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/73892cc8-05b7-4366-b27b-c98b635cab5e.jpg" }
       ]
     },
     {
       direction: "Маркетинг",
       examples: [
-        { title: "Продвижение стартапа с нуля", tech: "SEO, Контекст, SMM" },
-        { title: "Увеличение продаж на 300%", tech: "Таргет, Аналитика" },
-        { title: "Запуск email-рассылки", tech: "Automation, CRM" }
+        { title: "Продвижение стартапа с нуля", tech: "SEO, Контекст, SMM", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/e5defd8f-8092-47b3-b76b-41d81f2a4e60.jpg" },
+        { title: "Увеличение продаж на 300%", tech: "Таргет, Аналитика", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/5259adc3-9f63-4e4d-aac6-fe22b2baa8ea.jpg" },
+        { title: "Запуск email-рассылки", tech: "Automation, CRM", image: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/be6a5f51-86be-4f1e-9260-2b9dc8bf6796.jpg" }
       ]
     }
   ];
@@ -86,7 +86,7 @@ const Index = () => {
       course: "Курс по React и современному JavaScript",
       text: "Полностью сменил профессию за 10 месяцев. Курс дал все необходимые знания: от HTML/CSS до сложных React-приложений. Сейчас работаю в продуктовой компании с зарплатой 180к. Лучшее вложение в себя!",
       rating: 5,
-      photo: "👨‍💻",
+      photo: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/cb9aa0d1-e554-4228-a97e-9e6dbb39ed21.jpg",
       salary: "180 000 ₽"
     },
     {
@@ -95,7 +95,7 @@ const Index = () => {
       course: "Профессия UX/UI дизайнер с нуля",
       text: "До курса работала администратором. Прошла обучение за 8 месяцев, собрала портфолио из 6 проектов. Через месяц после выпуска получила оффер в дизайн-студию. Зарплата выросла в 3 раза!",
       rating: 5,
-      photo: "👩‍🎨",
+      photo: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/4a475086-0f4d-4021-bdd2-0f3f4e10eefe.jpg",
       salary: "150 000 ₽"
     },
     {
@@ -104,7 +104,7 @@ const Index = () => {
       course: "Интернет-маркетолог от А до Я",
       text: "Курс структурирован идеально: теория сразу закрепляется практикой. Изучил все инструменты: от контекста до email-маркетинга. Сейчас веду 5 проектов как фрилансер, доход от 200к в месяц.",
       rating: 5,
-      photo: "👨‍💼",
+      photo: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/a667c6a6-3646-44f7-b324-70850ee56b95.jpg",
       salary: "200 000+ ₽"
     },
     {
@@ -113,7 +113,7 @@ const Index = () => {
       course: "Python-разработчик с нуля до middle",
       text: "Преподаватели — практики из топовых компаний. Разбирали реальные кейсы, писали код каждый день. За время обучения создала 8 проектов для портфолио. Устроилась в IT-компанию junior разработчиком.",
       rating: 5,
-      photo: "👩‍💻",
+      photo: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/84dc6f71-3a7e-4281-b5dc-e80c151a70d6.jpg",
       salary: "120 000 ₽"
     },
     {
@@ -122,7 +122,7 @@ const Index = () => {
       course: "Data Analyst: аналитика и визуализация",
       text: "Научился работать с SQL, Python, строить дашборды в Power BI. Курс дал понимание, как превращать сырые данные в бизнес-решения. Перешёл из продаж в аналитику, зарплата +100% к прежней.",
       rating: 5,
-      photo: "👨‍🔬",
+      photo: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/ce173984-8390-40cf-a39d-baa8d79f693b.jpg",
       salary: "160 000 ₽"
     },
     {
@@ -131,9 +131,32 @@ const Index = () => {
       course: "Графический дизайн и иллюстрация",
       text: "Освоила Adobe Illustrator, Photoshop, научилась создавать иллюстрации с нуля. Преподаватели давали подробную обратную связь по каждой работе. Сейчас работаю с крупными брендами, средний чек проекта 50к.",
       rating: 5,
-      photo: "👩‍🎨",
+      photo: "https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/44cccdde-28f0-4274-87f4-934e9d8353ff.jpg",
       salary: "~200 000 ₽"
     }
+  ];
+
+  const categories = [
+    { name: "Финансы", count: 389, icon: "DollarSign" },
+    { name: "Маркетинг", count: 542, icon: "TrendingUp" },
+    { name: "Управление", count: 533, icon: "Users" },
+    { name: "Карьера и работа", count: 2982, icon: "Briefcase" },
+    { name: "Бизнес-обучение", count: 752, icon: "Building" },
+    { name: "Дизайн", count: 670, icon: "Palette" },
+    { name: "Аналитика", count: 222, icon: "BarChart3" },
+    { name: "IT, разработка", count: 1097, icon: "Code2" },
+    { name: "Психология", count: 1036, icon: "Heart" },
+    { name: "Личностный рост", count: 638, icon: "Sparkles" },
+    { name: "Женские курсы", count: 542, icon: "User" },
+    { name: "Мужские курсы", count: 81, icon: "UserSquare" },
+    { name: "Детям", count: 761, icon: "Baby" },
+    { name: "Образование", count: 2155, icon: "GraduationCap" },
+    { name: "Иностранные языки", count: 265, icon: "Globe" },
+    { name: "Здоровье", count: 638, icon: "HeartPulse" },
+    { name: "Спорт", count: 290, icon: "Activity" },
+    { name: "Творчество и хобби", count: 783, icon: "Paintbrush" },
+    { name: "Искусство", count: 381, icon: "Music" },
+    { name: "Духовные практики", count: 824, icon: "Sun" }
   ];
 
   const benefits = [
@@ -200,10 +223,10 @@ const Index = () => {
             Энциклопедия Профессий
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#categories" className="text-muted-foreground hover:text-foreground transition-colors">Тематики</a>
             <a href="#directions" className="text-muted-foreground hover:text-foreground transition-colors">Направления</a>
-            <a href="#examples" className="text-muted-foreground hover:text-foreground transition-colors">Примеры работ</a>
+            <a href="#examples" className="text-muted-foreground hover:text-foreground transition-colors">Примеры</a>
             <a href="#reviews" className="text-muted-foreground hover:text-foreground transition-colors">Отзывы</a>
-            <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">Вопросы</a>
           </nav>
           <Button 
             onClick={() => window.open(REFERRAL_LINK, '_blank')}
@@ -256,7 +279,47 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="directions" className="py-24 px-6 bg-gray-50">
+      <section id="categories" className="py-24 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-4 text-foreground">Выберите тематику</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              20 категорий курсов для любых целей и интересов — от IT до духовных практик
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                onClick={() => window.open(REFERRAL_LINK, '_blank')}
+                className="flex flex-col items-center gap-3 p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-lg transition-all group"
+              >
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <Icon name={category.icon as any} size={24} className="text-accent" />
+                </div>
+                <div className="text-center">
+                  <div className="font-semibold text-foreground mb-1">{category.name}</div>
+                  <div className="text-sm text-muted-foreground">{category.count} курсов</div>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button 
+              onClick={() => window.open(REFERRAL_LINK, '_blank')}
+              size="lg"
+              className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
+            >
+              Смотреть все курсы
+              <Icon name="ChevronRight" className="ml-2" size={20} />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="directions" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-4 text-foreground">Популярные направления</h2>
@@ -342,8 +405,8 @@ const Index = () => {
                   {category.examples.map((example, i) => (
                     <Card key={i} className="hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
-                        <div className="w-full h-32 bg-gradient-to-br from-accent/20 to-accent/5 rounded-lg mb-4 flex items-center justify-center">
-                          <Icon name="FileCode2" size={40} className="text-accent" />
+                        <div className="w-full h-48 rounded-lg mb-4 overflow-hidden">
+                          <img src={example.image} alt={example.title} className="w-full h-full object-cover" />
                         </div>
                         <h4 className="font-bold text-foreground mb-2">{example.title}</h4>
                         <p className="text-sm text-muted-foreground">{example.tech}</p>
@@ -382,7 +445,9 @@ const Index = () => {
               <Card key={index} className="hover:shadow-xl transition-shadow">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="text-5xl">{testimonial.photo}</div>
+                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                      <img src={testimonial.photo} alt={testimonial.name} className="w-full h-full object-cover" />
+                    </div>
                     <div className="flex-1">
                       <div className="flex gap-1 mb-2">
                         {[...Array(testimonial.rating)].map((_, i) => (
