@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface ContentSectionsProps {
   referralLink: string;
 }
 
 const ContentSections = ({ referralLink }: ContentSectionsProps) => {
+  const directionsAnimation = useScrollAnimation(0.1);
+  const benefitsAnimation = useScrollAnimation(0.1);
+  const examplesAnimation = useScrollAnimation(0.1);
+  
   const directions = [
     {
       title: "Программирование и разработка",
@@ -117,9 +122,16 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div ref={directionsAnimation.ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {directions.map((direction, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-accent cursor-pointer" onClick={() => window.open(referralLink, '_blank')}>
+              <Card 
+                key={index} 
+                className={`group hover:shadow-xl transition-all duration-500 border-2 hover:border-accent cursor-pointer ${
+                  directionsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+                onClick={() => window.open(referralLink, '_blank')}
+              >
                 <CardContent className="p-4 sm:p-8">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent/20 transition-colors">
                     <Icon name={direction.icon as any} size={24} className="text-accent sm:w-7 sm:h-7" />
@@ -161,9 +173,15 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div ref={benefitsAnimation.ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="group">
+              <div 
+                key={index} 
+                className={`group transition-all duration-500 ${
+                  benefitsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
                 <div className="mb-4">
                   <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                     <Icon name={benefit.icon as any} size={24} className="text-accent" />
@@ -186,13 +204,19 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
             </p>
           </div>
 
-          <div className="space-y-8 sm:space-y-12">
+          <div ref={examplesAnimation.ref} className="space-y-8 sm:space-y-12">
             {portfolioExamples.map((category, index) => (
               <div key={index}>
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">{category.direction}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                   {category.examples.map((example, i) => (
-                    <Card key={i} className="hover:shadow-lg transition-shadow">
+                    <Card 
+                      key={i} 
+                      className={`hover:shadow-lg transition-all duration-500 ${ 
+                        examplesAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                      }`}
+                      style={{ transitionDelay: `${(index * 3 + i) * 100}ms` }}
+                    >
                       <CardContent className="p-4 sm:p-6">
                         <div className="w-full h-40 sm:h-48 rounded-lg mb-3 sm:mb-4 overflow-hidden">
                           <img src={example.image} alt={example.title} className="w-full h-full object-cover" />

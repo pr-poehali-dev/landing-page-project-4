@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface CategoriesSectionProps {
   referralLink: string;
 }
 
 const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+  
   const categories = [
     { name: "Финансы", count: 389, icon: "DollarSign", url: "https://info-hit.ru/catalog/kursy-po-finansam/?idp=314945" },
     { name: "Маркетинг", count: 542, icon: "TrendingUp", url: "https://info-hit.ru/catalog/kursy-marketinga/?idp=314945" },
@@ -35,7 +38,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
         <img 
           src="https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/bucket/ai-technology-research-expert-featured.jpg" 
           alt="Background" 
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 via-gray-50/90 to-gray-50/95"></div>
       </div>
@@ -47,12 +50,15 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {categories.map((category, index) => (
             <button
               key={index}
               onClick={() => window.open(category.url, '_blank')}
-              className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group"
+              className={`flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${index * 50}ms` }}
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                 <Icon name={category.icon as any} size={20} className="text-accent sm:w-6 sm:h-6" />

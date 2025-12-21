@@ -2,12 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface TestimonialsSectionProps {
   referralLink: string;
 }
 
 const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
+  const testimonialsAnimation = useScrollAnimation(0.1);
+  const faqAnimation = useScrollAnimation(0.1);
+  
   const testimonials = [
     {
       name: "Алексей Соколов",
@@ -99,9 +103,15 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+          <div ref={testimonialsAnimation.ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow">
+              <Card 
+                key={index} 
+                className={`hover:shadow-xl transition-all duration-500 ${
+                  testimonialsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
                 <CardContent className="p-4 sm:p-8">
                   <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
                     <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
@@ -151,12 +161,16 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <div ref={faqAnimation.ref}>
+            <Accordion type="single" collapsible className="space-y-4">
             {faq.map((item, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border-2 rounded-lg px-4 sm:px-6 data-[state=open]:border-accent bg-white"
+                className={`border-2 rounded-lg px-4 sm:px-6 data-[state=open]:border-accent bg-white transition-all duration-500 ${ 
+                  faqAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <AccordionTrigger className="text-left font-semibold hover:no-underline text-sm sm:text-base">
                   {item.question}
@@ -167,6 +181,7 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
               </AccordionItem>
             ))}
           </Accordion>
+          </div>
         </div>
       </section>
 
