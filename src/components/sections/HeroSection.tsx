@@ -36,7 +36,12 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
-            onClick={() => window.open(referralLink, '_blank')}
+            onClick={() => {
+              if (typeof window.ym !== 'undefined') {
+                window.ym(105955345, 'reachGoal', 'catalog_click');
+              }
+              window.open(referralLink, '_blank');
+            }}
             size="lg" 
             className="bg-secondary hover:bg-secondary/90 text-white h-12 sm:h-14 px-6 sm:px-10 text-sm sm:text-base font-semibold animate-pulse-glow w-full sm:w-auto"
           >

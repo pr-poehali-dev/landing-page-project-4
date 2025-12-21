@@ -26,7 +26,12 @@ const Index = () => {
           </nav>
           <div className="flex items-center gap-2">
             <Button 
-              onClick={() => window.open(REFERRAL_LINK, '_blank')}
+              onClick={() => {
+                if (typeof window.ym !== 'undefined') {
+                  window.ym(105955345, 'reachGoal', 'catalog_click');
+                }
+                window.open(REFERRAL_LINK, '_blank');
+              }}
               className="hidden md:flex bg-secondary hover:bg-secondary/90 text-white font-medium animate-pulse-glow text-xs sm:text-sm px-3 sm:px-4 h-9 sm:h-10"
             >
               Выбрать курс

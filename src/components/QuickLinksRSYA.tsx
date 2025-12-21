@@ -55,7 +55,12 @@ const QuickLinksRSYA = ({ referralLink }: QuickLinksRSYAProps) => {
           {links.map((link, index) => (
             <Button
               key={index}
-              onClick={() => window.open(link.url, '_blank')}
+              onClick={() => {
+                if (typeof window.ym !== 'undefined') {
+                  window.ym(105955345, 'reachGoal', 'category_click');
+                }
+                window.open(link.url, '_blank');
+              }}
               variant="outline"
               className="h-auto flex flex-col items-center gap-3 p-4 sm:p-6 bg-white hover:bg-secondary/5 hover:border-secondary transition-all duration-300 hover:scale-105 hover:shadow-lg group"
             >
@@ -71,7 +76,12 @@ const QuickLinksRSYA = ({ referralLink }: QuickLinksRSYAProps) => {
 
         <div className="mt-8 sm:mt-12 text-center">
           <Button
-            onClick={() => window.open(referralLink, '_blank')}
+            onClick={() => {
+              if (typeof window.ym !== 'undefined') {
+                window.ym(105955345, 'reachGoal', 'catalog_click');
+              }
+              window.open(referralLink, '_blank');
+            }}
             size="lg"
             className="bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 sm:px-10 h-12 sm:h-14 text-base sm:text-lg"
           >

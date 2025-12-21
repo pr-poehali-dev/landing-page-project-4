@@ -54,7 +54,12 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
           {categories.map((category, index) => (
             <button
               key={index}
-              onClick={() => window.open(category.url, '_blank')}
+              onClick={() => {
+                if (typeof window.ym !== 'undefined') {
+                  window.ym(105955345, 'reachGoal', 'category_click');
+                }
+                window.open(category.url, '_blank');
+              }}
               className={`flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:-translate-y-2 hover:bg-gray-50 group ${
                 isVisible ? 'opacity-100 translate-y-0 transition-opacity duration-500' : 'opacity-0 translate-y-8'
               }`}
@@ -73,7 +78,12 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
 
         <div className="text-center mt-12">
           <Button 
-            onClick={() => window.open(referralLink, '_blank')}
+            onClick={() => {
+              if (typeof window.ym !== 'undefined') {
+                window.ym(105955345, 'reachGoal', 'catalog_click');
+              }
+              window.open(referralLink, '_blank');
+            }}
             size="lg"
             className="bg-secondary hover:bg-secondary/90 text-white font-semibold animate-pulse-glow"
           >

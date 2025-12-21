@@ -84,6 +84,9 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
           <div className="mt-3 pt-3 border-t border-gray-200">
             <Button 
               onClick={() => {
+                if (typeof window.ym !== 'undefined') {
+                  window.ym(105955345, 'reachGoal', 'catalog_click');
+                }
                 setIsOpen(false);
                 window.open(referralLink, '_blank');
               }}

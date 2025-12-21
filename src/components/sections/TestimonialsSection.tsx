@@ -195,7 +195,12 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
             Более 500 профессий и 2000 курсов ждут вас в каталоге. Найдите идеальный вариант для себя!
           </p>
           <Button 
-            onClick={() => window.open(referralLink, '_blank')}
+            onClick={() => {
+              if (typeof window.ym !== 'undefined') {
+                window.ym(105955345, 'reachGoal', 'catalog_click');
+              }
+              window.open(referralLink, '_blank');
+            }}
             size="lg"
             className="bg-white text-secondary hover:bg-gray-100 h-14 px-10 text-base font-semibold animate-pulse-glow"
           >
