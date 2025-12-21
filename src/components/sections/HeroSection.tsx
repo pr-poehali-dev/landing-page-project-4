@@ -17,7 +17,7 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
     <section className="pt-32 pb-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/5ee02c94-4605-4429-8b9a-45f35b7a8c07.jpg" 
+          src="https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/fccb9796-bdb7-46c5-9943-3fc7c27de750.jpg" 
           alt="Background" 
           className="w-full h-full object-cover opacity-80"
         />
