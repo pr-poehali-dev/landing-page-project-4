@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import ShareButtons from "@/components/ShareButtons";
 
 interface TestimonialsSectionProps {
   referralLink: string;
@@ -204,6 +205,12 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
           <div className="mt-8 text-sm opacity-75">
             Бесплатная консультация по выбору • Сравнение школ • Актуальные цены
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <ShareButtons />
         </div>
       </section>
     </>
