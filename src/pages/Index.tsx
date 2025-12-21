@@ -4,6 +4,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import CategoriesSection from "@/components/sections/CategoriesSection";
 import ContentSections from "@/components/sections/ContentSections";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import MobileMenu from "@/components/MobileMenu";
 
 const Index = () => {
   const REFERRAL_LINK = "https://ihclick.ru/?idp=314945&link=/catalog/";
@@ -21,12 +22,15 @@ const Index = () => {
             <a href="#examples" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Примеры</a>
             <a href="#reviews" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Отзывы</a>
           </nav>
-          <Button 
-            onClick={() => window.open(REFERRAL_LINK, '_blank')}
-            className="bg-secondary hover:bg-secondary/90 text-white font-medium animate-pulse-glow text-xs sm:text-sm px-3 sm:px-4 h-9 sm:h-10"
-          >
-            Выбрать курс
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button 
+              onClick={() => window.open(REFERRAL_LINK, '_blank')}
+              className="hidden md:flex bg-secondary hover:bg-secondary/90 text-white font-medium animate-pulse-glow text-xs sm:text-sm px-3 sm:px-4 h-9 sm:h-10"
+            >
+              Выбрать курс
+            </Button>
+            <MobileMenu referralLink={REFERRAL_LINK} />
+          </div>
         </div>
       </header>
 
