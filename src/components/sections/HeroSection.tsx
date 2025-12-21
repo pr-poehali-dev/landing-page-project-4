@@ -14,8 +14,16 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
   ];
 
   return (
-    <section className="pt-32 pb-24 px-6">
-      <div className="max-w-5xl mx-auto text-center">
+    <section className="pt-32 pb-24 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/files/cc19a2ea-3bcf-4c69-8216-7dc0fe5f20f6.jpg" 
+          alt="Background" 
+          className="w-full h-full object-cover opacity-5"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white"></div>
+      </div>
+      <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="inline-block px-4 py-1.5 bg-accent/10 text-accent text-sm font-medium rounded-full mb-6">
           Полный гид по IT-профессиям и онлайн-обучению
         </div>

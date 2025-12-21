@@ -44,7 +44,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
             <button
               key={index}
               onClick={() => window.open(category.url, '_blank')}
-              className="flex flex-col items-center gap-3 p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-lg transition-all group"
+              className="flex flex-col items-center gap-3 p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group"
             >
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                 <Icon name={category.icon as any} size={24} className="text-accent" />
