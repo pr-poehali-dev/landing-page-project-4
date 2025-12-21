@@ -143,7 +143,7 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
               onClick={() => window.open(referralLink, '_blank')}
               size="lg" 
               variant="outline"
-              className="border-2 font-semibold"
+              className="border-2 font-semibold animate-pulse-glow"
             >
               Смотреть все направления
               <Icon name="ChevronRight" className="ml-2" size={20} />
@@ -211,7 +211,7 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
             <Button 
               onClick={() => window.open(referralLink, '_blank')}
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
+              className="bg-secondary hover:bg-secondary/90 text-white font-semibold animate-pulse-glow"
             >
               Начать обучение
               <Icon name="ArrowRight" className="ml-2" size={20} />

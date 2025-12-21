@@ -61,7 +61,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
           <Button 
             onClick={() => window.open(referralLink, '_blank')}
             size="lg"
-            className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
+            className="bg-secondary hover:bg-secondary/90 text-white font-semibold animate-pulse-glow"
           >
             Смотреть все курсы
             <Icon name="ChevronRight" className="ml-2" size={20} />

@@ -181,7 +181,7 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
           <Button 
             onClick={() => window.open(referralLink, '_blank')}
             size="lg"
-            className="bg-white text-secondary hover:bg-gray-100 h-14 px-10 text-base font-semibold"
+            className="bg-white text-secondary hover:bg-gray-100 h-14 px-10 text-base font-semibold animate-pulse-glow"
           >
             Открыть каталог курсов
             <Icon name="ArrowRight" className="ml-2" size={20} />

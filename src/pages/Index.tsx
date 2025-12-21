@@ -23,7 +23,7 @@ const Index = () => {
           </nav>
           <Button 
             onClick={() => window.open(REFERRAL_LINK, '_blank')}
-            className="bg-secondary hover:bg-secondary/90 text-white font-medium"
+            className="bg-secondary hover:bg-secondary/90 text-white font-medium animate-pulse-glow"
           >
             Выбрать курс
           </Button>
