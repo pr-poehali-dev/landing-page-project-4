@@ -16,10 +16,10 @@ const Index = () => {
             Энциклопедия Профессий
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#categories" className="text-muted-foreground hover:text-foreground transition-colors">Тематики</a>
-            <a href="#directions" className="text-muted-foreground hover:text-foreground transition-colors">Направления</a>
-            <a href="#examples" className="text-muted-foreground hover:text-foreground transition-colors">Примеры</a>
-            <a href="#reviews" className="text-muted-foreground hover:text-foreground transition-colors">Отзывы</a>
+            <a href="#categories" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Тематики</a>
+            <a href="#directions" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Направления</a>
+            <a href="#examples" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Примеры</a>
+            <a href="#reviews" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Отзывы</a>
           </nav>
           <Button 
             onClick={() => window.open(REFERRAL_LINK, '_blank')}
