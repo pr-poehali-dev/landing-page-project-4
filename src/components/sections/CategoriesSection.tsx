@@ -7,26 +7,26 @@ interface CategoriesSectionProps {
 
 const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
   const categories = [
-    { name: "Финансы", count: 389, icon: "DollarSign" },
-    { name: "Маркетинг", count: 542, icon: "TrendingUp" },
-    { name: "Управление", count: 533, icon: "Users" },
-    { name: "Карьера и работа", count: 2982, icon: "Briefcase" },
-    { name: "Бизнес-обучение", count: 752, icon: "Building" },
-    { name: "Дизайн", count: 670, icon: "Palette" },
-    { name: "Аналитика", count: 222, icon: "BarChart3" },
-    { name: "IT, разработка", count: 1097, icon: "Code2" },
-    { name: "Психология", count: 1036, icon: "Heart" },
-    { name: "Личностный рост", count: 638, icon: "Sparkles" },
-    { name: "Женские курсы", count: 542, icon: "User" },
-    { name: "Мужские курсы", count: 81, icon: "UserSquare" },
-    { name: "Детям", count: 761, icon: "Baby" },
-    { name: "Образование", count: 2155, icon: "GraduationCap" },
-    { name: "Иностранные языки", count: 265, icon: "Globe" },
-    { name: "Здоровье", count: 638, icon: "HeartPulse" },
-    { name: "Спорт", count: 290, icon: "Activity" },
-    { name: "Творчество и хобби", count: 783, icon: "Paintbrush" },
-    { name: "Искусство", count: 381, icon: "Music" },
-    { name: "Духовные практики", count: 824, icon: "Sun" }
+    { name: "Финансы", count: 389, icon: "DollarSign", url: "https://info-hit.ru/catalog/kursy-po-finansam/" },
+    { name: "Маркетинг", count: 542, icon: "TrendingUp", url: "https://info-hit.ru/catalog/kursy-marketinga/" },
+    { name: "Управление", count: 533, icon: "Users", url: "https://info-hit.ru/catalog/kursy-po-upravleniyu/" },
+    { name: "Карьера и работа", count: 2982, icon: "Briefcase", url: "https://info-hit.ru/catalog/karera-i-rabota/" },
+    { name: "Бизнес-обучение", count: 752, icon: "Building", url: "https://info-hit.ru/catalog/kursy-po-biznesu/" },
+    { name: "Дизайн", count: 670, icon: "Palette", url: "https://info-hit.ru/catalog/dizayn/" },
+    { name: "Аналитика", count: 222, icon: "BarChart3", url: "https://info-hit.ru/catalog/analitika/" },
+    { name: "IT, разработка", count: 1097, icon: "Code2", url: "https://info-hit.ru/catalog/it-razrabotka-kursy/" },
+    { name: "Психология", count: 1036, icon: "Heart", url: "https://info-hit.ru/catalog/psikhologiya/" },
+    { name: "Личностный рост", count: 638, icon: "Sparkles", url: "https://info-hit.ru/catalog/lichnostnyy-rost/" },
+    { name: "Женские курсы", count: 542, icon: "User", url: "https://info-hit.ru/catalog/zhenskie-kursy/" },
+    { name: "Мужские курсы", count: 81, icon: "UserSquare", url: "https://info-hit.ru/catalog/muzhskie-kursy/" },
+    { name: "Детям", count: 761, icon: "Baby", url: "https://info-hit.ru/catalog/kursy-dlya-detey/" },
+    { name: "Образование", count: 2155, icon: "GraduationCap", url: "https://info-hit.ru/catalog/uchebnye-kursy/" },
+    { name: "Иностранные языки", count: 265, icon: "Globe", url: "https://info-hit.ru/catalog/inostrannye-yazyki/" },
+    { name: "Здоровье", count: 638, icon: "HeartPulse", url: "https://info-hit.ru/catalog/zdorove/" },
+    { name: "Спорт", count: 290, icon: "Activity", url: "https://info-hit.ru/catalog/sport/" },
+    { name: "Творчество и хобби", count: 783, icon: "Paintbrush", url: "https://info-hit.ru/catalog/khobbi-i-uvlecheniya/" },
+    { name: "Искусство", count: 381, icon: "Music", url: "https://info-hit.ru/catalog/kursy-obshchestvo-i-nauka/" },
+    { name: "Духовные практики", count: 824, icon: "Sun", url: "https://info-hit.ru/catalog/dukhovnye-praktiki/" }
   ];
 
   return (
@@ -43,7 +43,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
           {categories.map((category, index) => (
             <button
               key={index}
-              onClick={() => window.open(referralLink, '_blank')}
+              onClick={() => window.open(category.url, '_blank')}
               className="flex flex-col items-center gap-3 p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-lg transition-all group"
             >
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
