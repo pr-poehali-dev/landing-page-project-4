@@ -38,7 +38,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
         <img 
           src="https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/bucket/ai-technology-research-expert-featured.jpg" 
           alt="Background" 
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 via-gray-50/90 to-gray-50/95"></div>
       </div>

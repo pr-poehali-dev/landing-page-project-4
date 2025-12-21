@@ -44,27 +44,27 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-auto max-h-[80vh] w-48 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden rounded-bl-2xl ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="p-6 rounded-0 px-[45px] py-[45px] bg-gray-200">
+        <div className="p-4">
           {/* Close Button */}
           <button
-            className="absolute top-4 right-4 p-2 text-foreground"
+            className="absolute top-2 right-2 p-1 text-foreground hover:bg-gray-100 rounded-lg"
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
           >
-            <Icon name="X" size={24} />
+            <Icon name="X" size={20} />
           </button>
 
           {/* Menu Title */}
-          <div className="text-2xl font-bold mb-8 text-foreground">
+          <div className="text-base font-bold mb-3 text-foreground">
             Меню
           </div>
 
           {/* Menu Items */}
-          <nav className="flex flex-col gap-4">
+          <nav className="flex flex-col gap-0.5">
             {menuItems.map((item) => (
               <a
                 key={item.href}
@@ -73,7 +73,7 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="text-xl font-semibold text-gray-900 hover:text-secondary transition-colors py-3 border-b border-gray-100"
+                className="text-sm font-semibold text-gray-900 hover:text-secondary hover:bg-gray-50 transition-colors py-2 px-2 rounded-lg"
               >
                 {item.label}
               </a>
@@ -81,16 +81,17 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
           </nav>
 
           {/* CTA Button */}
-          <div className="mt-8 pt-8 border-t border-gray-200">
+          <div className="mt-3 pt-3 border-t border-gray-200">
             <Button 
               onClick={() => {
                 setIsOpen(false);
                 window.open(referralLink, '_blank');
               }}
-              className="w-full bg-secondary hover:bg-secondary/90 text-white font-medium"
+              size="sm"
+              className="w-full bg-secondary hover:bg-secondary/90 text-white font-medium text-xs py-2"
             >
               Выбрать курс
-              <Icon name="ArrowRight" className="ml-2" size={20} />
+              <Icon name="ArrowRight" className="ml-1" size={14} />
             </Button>
           </div>
         </div>
