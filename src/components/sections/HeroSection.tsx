@@ -24,7 +24,7 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white"></div>
       </div>
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <div className="inline-block px-3 sm:px-4 py-1.5 bg-accent/10 text-accent text-xs sm:text-sm font-medium rounded-full mb-4 sm:mb-6">
+        <div className="inline-block px-3 sm:px-4 py-1.5 text-accent text-xs sm:text-sm font-medium rounded-full mb-4 sm:mb-6 bg-gray-200">
           Полный гид по IT-профессиям и онлайн-обучению
         </div>
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 text-foreground">
