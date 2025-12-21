@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold tracking-tight text-foreground">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+          <div className="text-base sm:text-xl font-bold tracking-tight text-foreground">
             Энциклопедия Профессий
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -23,7 +23,7 @@ const Index = () => {
           </nav>
           <Button 
             onClick={() => window.open(REFERRAL_LINK, '_blank')}
-            className="bg-secondary hover:bg-secondary/90 text-white font-medium animate-pulse-glow"
+            className="bg-secondary hover:bg-secondary/90 text-white font-medium animate-pulse-glow text-xs sm:text-sm px-3 sm:px-4 h-9 sm:h-10"
           >
             Выбрать курс
           </Button>
@@ -35,9 +35,9 @@ const Index = () => {
       <ContentSections referralLink={REFERRAL_LINK} />
       <TestimonialsSection referralLink={REFERRAL_LINK} />
 
-      <footer className="bg-foreground text-white py-12 px-6">
+      <footer className="bg-foreground text-white py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
             <div>
               <div className="text-xl font-bold mb-4">Энциклопедия Профессий</div>
               <p className="text-white/70 text-sm leading-relaxed">

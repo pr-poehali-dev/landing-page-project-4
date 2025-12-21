@@ -108,24 +108,24 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
 
   return (
     <>
-      <section id="directions" className="py-24 px-6">
+      <section id="directions" className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 text-foreground">Популярные направления</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Популярные направления</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Выберите сферу, которая вам интересна, и откройте для себя десятки профессий с высокими зарплатами
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {directions.map((direction, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-accent cursor-pointer" onClick={() => window.open(referralLink, '_blank')}>
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <Icon name={direction.icon as any} size={28} className="text-accent" />
+                <CardContent className="p-4 sm:p-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent/20 transition-colors">
+                    <Icon name={direction.icon as any} size={24} className="text-accent sm:w-7 sm:h-7" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-foreground">{direction.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{direction.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground">{direction.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{direction.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {direction.skills.map((skill, i) => (
                       <span key={i} className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full text-foreground">
@@ -152,16 +152,16 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gray-50">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 text-foreground">Почему тысячи людей выбирают нас</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Почему тысячи людей выбирают нас</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Мы создали самую полную базу знаний о современных IT-профессиях и онлайн-обучении
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="group">
                 <div className="mb-4">
@@ -169,36 +169,36 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
                     <Icon name={benefit.icon as any} size={24} className="text-accent" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-foreground">{benefit.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground">{benefit.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="examples" className="py-24 px-6">
+      <section id="examples" className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 text-foreground">Примеры реальных проектов выпускников</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Примеры реальных проектов выпускников</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Посмотрите, какие проекты создают студенты во время обучения и после его окончания
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {portfolioExamples.map((category, index) => (
               <div key={index}>
-                <h3 className="text-2xl font-bold mb-6 text-foreground">{category.direction}</h3>
-                <div className="grid md:grid-cols-3 gap-6">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">{category.direction}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                   {category.examples.map((example, i) => (
                     <Card key={i} className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-6">
-                        <div className="w-full h-48 rounded-lg mb-4 overflow-hidden">
+                      <CardContent className="p-4 sm:p-6">
+                        <div className="w-full h-40 sm:h-48 rounded-lg mb-3 sm:mb-4 overflow-hidden">
                           <img src={example.image} alt={example.title} className="w-full h-full object-cover" />
                         </div>
-                        <h4 className="font-bold text-foreground mb-2">{example.title}</h4>
-                        <p className="text-sm text-muted-foreground">{example.tech}</p>
+                        <h4 className="font-bold text-foreground mb-1 sm:mb-2 text-sm sm:text-base">{example.title}</h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{example.tech}</p>
                       </CardContent>
                     </Card>
                   ))}

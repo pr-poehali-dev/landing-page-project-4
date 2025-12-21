@@ -90,21 +90,21 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
 
   return (
     <>
-      <section id="reviews" className="py-24 px-6 bg-gray-50">
+      <section id="reviews" className="py-12 sm:py-24 px-4 sm:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 text-foreground">Истории успеха наших выпускников</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Истории успеха наших выпускников</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Реальные люди, которые полностью изменили свою карьеру после прохождения курсов
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="hover:shadow-xl transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                <CardContent className="p-4 sm:p-8">
+                  <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
                       <img src={testimonial.photo} alt={testimonial.name} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
@@ -113,12 +113,12 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
                           <Icon key={i} name="Star" size={16} className="text-accent fill-accent" />
                         ))}
                       </div>
-                      <div className="font-bold text-foreground">{testimonial.name}</div>
-                      <div className="text-sm text-accent font-semibold">{testimonial.direction}</div>
-                      <div className="text-xs text-muted-foreground mt-1">Зарплата: {testimonial.salary}</div>
+                      <div className="font-bold text-foreground text-sm sm:text-base">{testimonial.name}</div>
+                      <div className="text-xs sm:text-sm text-accent font-semibold">{testimonial.direction}</div>
+                      <div className="text-xs text-muted-foreground mt-0.5 sm:mt-1">Зарплата: {testimonial.salary}</div>
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 italic">
+                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 italic">
                     "{testimonial.text}"
                   </p>
                   <div className="pt-4 border-t">
@@ -142,11 +142,11 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
         </div>
       </section>
 
-      <section id="faq" className="py-24 px-6">
+      <section id="faq" className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 text-foreground">Частые вопросы</h2>
-            <p className="text-lg text-muted-foreground">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Частые вопросы</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
               Ответы на главные вопросы о выборе профессии и онлайн-обучении
             </p>
           </div>
@@ -156,12 +156,12 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border-2 rounded-lg px-6 data-[state=open]:border-accent bg-white"
+                className="border-2 rounded-lg px-4 sm:px-6 data-[state=open]:border-accent bg-white"
               >
-                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline text-sm sm:text-base">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-muted-foreground leading-relaxed text-sm">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -170,9 +170,9 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gradient-to-br from-secondary to-accent">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-secondary to-accent">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Начните путь к новой профессии уже сегодня
           </h2>
           <p className="text-xl mb-10 opacity-90">

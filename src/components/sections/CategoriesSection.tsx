@@ -30,11 +30,11 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
   ];
 
   return (
-    <section id="categories" className="py-24 px-6 bg-gray-50">
+    <section id="categories" className="py-12 sm:py-24 px-4 sm:px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4 text-foreground">Выберите тематику</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Выберите тематику</h2>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             20 категорий курсов для любых целей и интересов — от IT до духовных практик
           </p>
         </div>
@@ -44,14 +44,14 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
             <button
               key={index}
               onClick={() => window.open(category.url, '_blank')}
-              className="flex flex-col items-center gap-3 p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group"
+              className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                <Icon name={category.icon as any} size={24} className="text-accent" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <Icon name={category.icon as any} size={20} className="text-accent sm:w-6 sm:h-6" />
               </div>
               <div className="text-center">
-                <div className="font-semibold text-foreground mb-1">{category.name}</div>
-                <div className="text-sm text-muted-foreground">{category.count} курсов</div>
+                <div className="font-semibold text-foreground mb-0.5 sm:mb-1 text-sm sm:text-base">{category.name}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">{category.count} курсов</div>
               </div>
             </button>
           ))}
