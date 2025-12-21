@@ -5,6 +5,7 @@ import CategoriesSection from "@/components/sections/CategoriesSection";
 import ContentSections from "@/components/sections/ContentSections";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import MobileMenu from "@/components/MobileMenu";
+import QuickLinks from "@/components/QuickLinks";
 
 const Index = () => {
   const REFERRAL_LINK = "https://ihclick.ru/?idp=314945&link=/catalog/";
@@ -38,6 +39,8 @@ const Index = () => {
       <CategoriesSection referralLink={REFERRAL_LINK} />
       <ContentSections referralLink={REFERRAL_LINK} />
       <TestimonialsSection referralLink={REFERRAL_LINK} />
+
+      <QuickLinks />
 
       <footer className="bg-foreground text-white py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
