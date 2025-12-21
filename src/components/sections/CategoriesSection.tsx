@@ -55,10 +55,12 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
             <button
               key={index}
               onClick={() => window.open(category.url, '_blank')}
-              className={`flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group ${
+              className={`flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
-              style={{ transitionDelay: `${index * 50}ms` }}
+              style={{ 
+                transitionDelay: isVisible ? `${index * 50}ms` : '0ms'
+              }}
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                 <Icon name={category.icon as any} size={20} className="text-accent sm:w-6 sm:h-6" />
