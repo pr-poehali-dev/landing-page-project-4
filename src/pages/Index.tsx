@@ -6,6 +6,7 @@ import ContentSections from "@/components/sections/ContentSections";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import MobileMenu from "@/components/MobileMenu";
 import QuickLinks from "@/components/QuickLinks";
+import QuickLinksRSYA from "@/components/QuickLinksRSYA";
 
 const Index = () => {
   const REFERRAL_LINK = "https://ihclick.ru/?idp=314945&link=/catalog/";
@@ -37,6 +38,7 @@ const Index = () => {
 
       <HeroSection referralLink={REFERRAL_LINK} />
       <CategoriesSection referralLink={REFERRAL_LINK} />
+      <QuickLinksRSYA referralLink={REFERRAL_LINK} />
       <ContentSections referralLink={REFERRAL_LINK} />
       <TestimonialsSection referralLink={REFERRAL_LINK} />
 
