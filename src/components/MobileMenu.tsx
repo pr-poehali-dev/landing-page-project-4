@@ -27,11 +27,11 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
     <>
       {/* Burger Button */}
       <button
-        className="md:hidden p-2 text-foreground"
+        className="md:hidden p-2 text-foreground hover:bg-gray-100 rounded-lg transition-colors"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
-        <Icon name={isOpen ? "X" : "Menu"} size={24} />
+        <Icon name={isOpen ? "X" : "Menu"} size={28} />
       </button>
 
       {/* Mobile Menu Overlay */}
@@ -59,7 +59,7 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
           </button>
 
           {/* Menu Title */}
-          <div className="text-xl font-bold mb-8 text-foreground">
+          <div className="text-2xl font-bold mb-8 text-foreground">
             Меню
           </div>
 
@@ -73,7 +73,7 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                className="text-xl font-semibold text-gray-900 hover:text-secondary transition-colors py-3 border-b border-gray-100"
               >
                 {item.label}
               </a>

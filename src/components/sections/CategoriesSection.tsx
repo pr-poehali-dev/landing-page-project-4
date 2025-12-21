@@ -30,8 +30,16 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
   ];
 
   return (
-    <section id="categories" className="py-12 sm:py-24 px-4 sm:px-6 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section id="categories" className="py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/bucket/ai-technology-research-expert-featured.jpg" 
+          alt="Background" 
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 via-gray-50/90 to-gray-50/95"></div>
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Выберите тематику</h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
