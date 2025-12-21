@@ -48,7 +48,7 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="p-6">
+        <div className="p-6 rounded-0 px-[45px] py-[45px] bg-gray-200">
           {/* Close Button */}
           <button
             className="absolute top-4 right-4 p-2 text-foreground"
