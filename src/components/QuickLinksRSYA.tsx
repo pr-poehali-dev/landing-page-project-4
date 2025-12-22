@@ -9,32 +9,32 @@ const QuickLinksRSYA = ({ referralLink }: QuickLinksRSYAProps) => {
   const links = [
     { 
       title: "Программирование", 
-      url: `${referralLink}programmirovanie/`,
+      url: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/",
       icon: "Code2"
     },
     { 
       title: "Дизайн", 
-      url: `${referralLink}dizajn/`,
+      url: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/",
       icon: "Palette"
     },
     { 
       title: "Маркетинг", 
-      url: `${referralLink}marketing/`,
+      url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-marketinga/",
       icon: "TrendingUp"
     },
     { 
       title: "Аналитика", 
-      url: `${referralLink}analitika/`,
+      url: "https://ihclick.ru/?idp=314945&link=/catalog/data-science-kursy/",
       icon: "BarChart3"
     },
     { 
       title: "Менеджмент", 
-      url: `${referralLink}menedzhment/`,
+      url: "https://ihclick.ru/?idp=314945&link=/catalog/menedzhment/",
       icon: "Briefcase"
     },
     { 
       title: "Игры", 
-      url: `${referralLink}razrabotka-igr/`,
+      url: "https://ihclick.ru/?idp=314945&link=/catalog/razrabotka-igr/",
       icon: "Gamepad2"
     },
   ];

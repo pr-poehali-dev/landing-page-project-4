@@ -10,26 +10,26 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
   const { ref, isVisible } = useScrollAnimation(0.1);
   
   const categories = [
-    { name: "Финансы", count: 389, icon: "DollarSign", url: "https://info-hit.ru/catalog/kursy-po-finansam/?idp=314945" },
-    { name: "Маркетинг", count: 542, icon: "TrendingUp", url: "https://info-hit.ru/catalog/kursy-marketinga/?idp=314945" },
-    { name: "Управление", count: 533, icon: "Users", url: "https://info-hit.ru/catalog/kursy-po-upravleniyu/?idp=314945" },
-    { name: "Карьера и работа", count: 2982, icon: "Briefcase", url: "https://info-hit.ru/catalog/karera-i-rabota/?idp=314945" },
-    { name: "Бизнес-обучение", count: 752, icon: "Building", url: "https://info-hit.ru/catalog/kursy-po-biznesu/?idp=314945" },
-    { name: "Дизайн", count: 670, icon: "Palette", url: "https://info-hit.ru/catalog/dizayn/?idp=314945" },
-    { name: "Аналитика", count: 222, icon: "BarChart3", url: "https://info-hit.ru/catalog/analitika/?idp=314945" },
-    { name: "IT, разработка", count: 1097, icon: "Code2", url: "https://info-hit.ru/catalog/it-razrabotka-kursy/?idp=314945" },
-    { name: "Психология", count: 1036, icon: "Heart", url: "https://info-hit.ru/catalog/psikhologiya/?idp=314945" },
-    { name: "Личностный рост", count: 638, icon: "Sparkles", url: "https://info-hit.ru/catalog/lichnostnyy-rost/?idp=314945" },
-    { name: "Женские курсы", count: 542, icon: "User", url: "https://info-hit.ru/catalog/zhenskie-kursy/?idp=314945" },
-    { name: "Мужские курсы", count: 81, icon: "UserSquare", url: "https://info-hit.ru/catalog/muzhskie-kursy/?idp=314945" },
-    { name: "Детям", count: 761, icon: "Baby", url: "https://info-hit.ru/catalog/kursy-dlya-detey/?idp=314945" },
-    { name: "Образование", count: 2155, icon: "GraduationCap", url: "https://info-hit.ru/catalog/uchebnye-kursy/?idp=314945" },
-    { name: "Иностранные языки", count: 265, icon: "Globe", url: "https://info-hit.ru/catalog/inostrannye-yazyki/?idp=314945" },
-    { name: "Здоровье", count: 638, icon: "HeartPulse", url: "https://info-hit.ru/catalog/zdorove/?idp=314945" },
-    { name: "Спорт", count: 290, icon: "Activity", url: "https://info-hit.ru/catalog/sport/?idp=314945" },
-    { name: "Творчество и хобби", count: 783, icon: "Paintbrush", url: "https://info-hit.ru/catalog/khobbi-i-uvlecheniya/?idp=314945" },
-    { name: "Искусство", count: 381, icon: "Music", url: "https://info-hit.ru/catalog/kursy-obshchestvo-i-nauka/?idp=314945" },
-    { name: "Духовные практики", count: 824, icon: "Sun", url: "https://info-hit.ru/catalog/dukhovnye-praktiki/?idp=314945" }
+    { name: "Финансы", count: 389, icon: "DollarSign", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-finansam/" },
+    { name: "Маркетинг", count: 542, icon: "TrendingUp", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-marketinga/" },
+    { name: "Управление", count: 533, icon: "Users", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-upravleniyu/" },
+    { name: "Карьера и работа", count: 2982, icon: "Briefcase", url: "https://ihclick.ru/?idp=314945&link=/catalog/karera-i-rabota/" },
+    { name: "Бизнес-обучение", count: 752, icon: "Building", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-biznesu/" },
+    { name: "Дизайн", count: 670, icon: "Palette", url: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/" },
+    { name: "Аналитика", count: 222, icon: "BarChart3", url: "https://ihclick.ru/?idp=314945&link=/catalog/analitika/" },
+    { name: "IT, разработка", count: 1097, icon: "Code2", url: "https://ihclick.ru/?idp=314945&link=/catalog/it-razrabotka-kursy/" },
+    { name: "Психология", count: 1036, icon: "Heart", url: "https://ihclick.ru/?idp=314945&link=/catalog/psikhologiya/" },
+    { name: "Личностный рост", count: 638, icon: "Sparkles", url: "https://ihclick.ru/?idp=314945&link=/catalog/lichnostnyy-rost/" },
+    { name: "Женские курсы", count: 542, icon: "User", url: "https://ihclick.ru/?idp=314945&link=/catalog/zhenskie-kursy/" },
+    { name: "Мужские курсы", count: 81, icon: "UserSquare", url: "https://ihclick.ru/?idp=314945&link=/catalog/muzhskie-kursy/" },
+    { name: "Детям", count: 761, icon: "Baby", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-dlya-detey/" },
+    { name: "Образование", count: 2155, icon: "GraduationCap", url: "https://ihclick.ru/?idp=314945&link=/catalog/uchebnye-kursy/" },
+    { name: "Иностранные языки", count: 265, icon: "Globe", url: "https://ihclick.ru/?idp=314945&link=/catalog/inostrannye-yazyki/" },
+    { name: "Здоровье", count: 638, icon: "HeartPulse", url: "https://ihclick.ru/?idp=314945&link=/catalog/zdorove/" },
+    { name: "Спорт", count: 290, icon: "Activity", url: "https://ihclick.ru/?idp=314945&link=/catalog/sport/" },
+    { name: "Творчество и хобби", count: 783, icon: "Paintbrush", url: "https://ihclick.ru/?idp=314945&link=/catalog/khobbi-i-uvlecheniya/" },
+    { name: "Искусство", count: 381, icon: "Music", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-obshchestvo-i-nauka/" },
+    { name: "Духовные практики", count: 824, icon: "Sun", url: "https://ihclick.ru/?idp=314945&link=/catalog/dukhovnye-praktiki/" }
   ];
 
   return (
