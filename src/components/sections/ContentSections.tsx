@@ -46,14 +46,14 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
       description: "Управление проектами, продакт-менеджмент, управление командой, Agile, Scrum",
       icon: "Users",
       skills: ["Jira", "Confluence", "Методологии", "Лидерство", "Планирование"],
-      link: "https://ihclick.ru/?idp=314945&link=/catalog/menedzhment/"
+      link: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-upravleniyu/"
     },
     {
       title: "Бизнес и предпринимательство",
       description: "Создание и развитие бизнеса, финансы, продажи, e-commerce, инвестиции",
       icon: "Briefcase",
       skills: ["Стратегия", "Финансы", "Продажи", "Маркетплейсы", "Автоматизация"],
-      link: "https://ihclick.ru/?idp=314945&link=/catalog/biznes-kursy/"
+      link: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-biznesu/"
     }
   ];
 
