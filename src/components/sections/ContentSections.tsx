@@ -18,42 +18,42 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
       description: "От основ до продвинутых технологий: веб, мобильная разработка, backend, frontend, DevOps",
       icon: "Code2",
       skills: ["Python", "JavaScript", "React", "Node.js", "SQL", "Git"],
-      link: "https://ihclick.ru/?idp=314945&link=/catalog/courses/programmirovanie/"
+      link: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/"
     },
     {
       title: "Дизайн и креатив",
       description: "UX/UI дизайн, графический дизайн, моушн-дизайн, 3D-моделирование, веб-дизайн",
       icon: "Palette",
       skills: ["Figma", "Adobe Suite", "Sketch", "Blender", "Cinema 4D"],
-      link: "https://ihclick.ru/?idp=314945&link=/catalog/courses/dizayn/"
+      link: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/"
     },
     {
       title: "Маркетинг и продвижение",
       description: "Digital-маркетинг, SMM, SEO, контент-маркетинг, таргетированная реклама",
       icon: "TrendingUp",
       skills: ["Яндекс.Директ", "Google Ads", "Аналитика", "Контент", "Стратегия"],
-      link: "https://ihclick.ru/?idp=314945&link=/catalog/courses/marketing/"
+      link: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-marketinga/"
     },
     {
       title: "Аналитика и работа с данными",
       description: "Анализ данных, бизнес-аналитика, машинное обучение, Big Data, визуализация",
       icon: "BarChart3",
       skills: ["SQL", "Python", "Excel", "Power BI", "Tableau"],
-      link: "https://ihclick.ru/?idp=314945&link=/catalog/courses/analitika/"
+      link: "https://ihclick.ru/?idp=314945&link=/catalog/data-science-kursy/"
     },
     {
       title: "Менеджмент и управление",
       description: "Управление проектами, продакт-менеджмент, управление командой, Agile, Scrum",
       icon: "Users",
       skills: ["Jira", "Confluence", "Методологии", "Лидерство", "Планирование"],
-      link: "https://ihclick.ru/?idp=314945&link=/catalog/courses/menedzhment/"
+      link: "https://ihclick.ru/?idp=314945&link=/catalog/menedzhment/"
     },
     {
       title: "Бизнес и предпринимательство",
       description: "Создание и развитие бизнеса, финансы, продажи, e-commerce, инвестиции",
       icon: "Briefcase",
       skills: ["Стратегия", "Финансы", "Продажи", "Маркетплейсы", "Автоматизация"],
-      link: "https://ihclick.ru/?idp=314945&link=/catalog/courses/biznes/"
+      link: "https://ihclick.ru/?idp=314945&link=/catalog/biznes-kursy/"
     }
   ];
 
