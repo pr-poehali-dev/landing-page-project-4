@@ -40,6 +40,9 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
               if (typeof window.ym !== 'undefined') {
                 window.ym(105955345, 'reachGoal', 'catalog_click');
               }
+              if (typeof window.VK !== 'undefined' && window.VK.Retargeting) {
+                window.VK.Retargeting.Event('lead');
+              }
               window.open(referralLink, '_blank');
             }}
             size="lg" 

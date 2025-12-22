@@ -58,6 +58,9 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
                 if (typeof window.ym !== 'undefined') {
                   window.ym(105955345, 'reachGoal', 'category_click');
                 }
+                if (typeof window.VK !== 'undefined' && window.VK.Retargeting) {
+                  window.VK.Retargeting.Event('lead');
+                }
                 window.open(category.url, '_blank');
               }}
               className={`flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:scale-105 hover:bg-gradient-to-br hover:from-white hover:to-gray-50 group relative overflow-hidden ${
