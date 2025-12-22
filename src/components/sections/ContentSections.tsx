@@ -130,7 +130,12 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
                   directionsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
-                onClick={() => window.open(referralLink, '_blank')}
+                onClick={() => {
+                  if (typeof window.ym !== 'undefined') {
+                    window.ym(105955345, 'reachGoal', 'direction_click');
+                  }
+                  window.open(referralLink, '_blank');
+                }}
               >
                 <CardContent className="p-4 sm:p-8">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent/20 transition-colors">
