@@ -72,8 +72,8 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
               <div className="text-center relative z-10">
                 <div className="font-semibold text-foreground mb-0.5 sm:mb-1 text-sm sm:text-base">{category.name}</div>
                 <div className="text-xs sm:text-sm text-muted-foreground mb-1">{category.count} курсов</div>
-                <div className="text-xs font-semibold text-accent group-hover:text-secondary transition-colors">
-                  💵 {category.salary}
+                <div className="text-xs font-semibold text-green-600 group-hover:text-green-700 transition-colors">
+                  💰 Зарплата: {category.salary}
                 </div>
               </div>
             </button>
