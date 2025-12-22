@@ -28,13 +28,13 @@ const QuickLinksRSYA = ({ referralLink }: QuickLinksRSYAProps) => {
       icon: "BarChart3"
     },
     { 
-      title: "Менеджмент", 
-      url: "https://ihclick.ru/?idp=314945&link=/catalog/menedzhment/",
+      title: "Управление", 
+      url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-upravleniyu/",
       icon: "Briefcase"
     },
     { 
-      title: "Игры", 
-      url: "https://ihclick.ru/?idp=314945&link=/catalog/razrabotka-igr/",
+      title: "Геймдизайн", 
+      url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-geymdizayna/",
       icon: "Gamepad2"
     },
   ];
