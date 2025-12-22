@@ -14,45 +14,57 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
   
   const directions = [
     {
-      title: "Программирование и разработка",
+      title: "💻 Программирование и разработка",
       description: "От основ до продвинутых технологий: веб, мобильная разработка, backend, frontend, DevOps",
       icon: "Code2",
       skills: ["Python", "JavaScript", "React", "Node.js", "SQL", "Git"],
+      salary: "до 350 000 ₽",
+      color: "bg-emerald-500",
       link: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/"
     },
     {
-      title: "Дизайн и креатив",
+      title: "🎨 Дизайн и креатив",
       description: "UX/UI дизайн, графический дизайн, моушн-дизайн, 3D-моделирование, веб-дизайн",
       icon: "Palette",
       skills: ["Figma", "Adobe Suite", "Sketch", "Blender", "Cinema 4D"],
+      salary: "до 200 000 ₽",
+      color: "bg-pink-500",
       link: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/"
     },
     {
-      title: "Маркетинг и продвижение",
+      title: "📈 Маркетинг и продвижение",
       description: "Digital-маркетинг, SMM, SEO, контент-маркетинг, таргетированная реклама",
       icon: "TrendingUp",
       skills: ["Яндекс.Директ", "Google Ads", "Аналитика", "Контент", "Стратегия"],
+      salary: "до 180 000 ₽",
+      color: "bg-blue-500",
       link: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-marketinga/"
     },
     {
-      title: "Аналитика и работа с данными",
+      title: "📊 Аналитика и работа с данными",
       description: "Анализ данных, бизнес-аналитика, машинное обучение, Big Data, визуализация",
       icon: "BarChart3",
       skills: ["SQL", "Python", "Excel", "Power BI", "Tableau"],
+      salary: "до 220 000 ₽",
+      color: "bg-cyan-500",
       link: "https://ihclick.ru/?idp=314945&link=/catalog/data-science-kursy/"
     },
     {
-      title: "Менеджмент и управление",
+      title: "👥 Менеджмент и управление",
       description: "Управление проектами, продакт-менеджмент, управление командой, Agile, Scrum",
       icon: "Users",
       skills: ["Jira", "Confluence", "Методологии", "Лидерство", "Планирование"],
+      salary: "до 200 000 ₽",
+      color: "bg-purple-500",
       link: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-upravleniyu/"
     },
     {
-      title: "Бизнес и предпринимательство",
+      title: "🏢 Бизнес и предпринимательство",
       description: "Создание и развитие бизнеса, финансы, продажи, e-commerce, инвестиции",
       icon: "Briefcase",
       skills: ["Стратегия", "Финансы", "Продажи", "Маркетплейсы", "Автоматизация"],
+      salary: "до 300 000 ₽",
+      color: "bg-orange-500",
       link: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-biznesu/"
     }
   ];
@@ -132,10 +144,10 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
             {directions.map((direction, index) => (
               <Card 
                 key={index} 
-                className={`group hover:shadow-xl transition-all duration-500 border-2 hover:border-accent cursor-pointer ${
+                className={`group hover:shadow-2xl transition-all duration-500 border-2 hover:border-accent cursor-pointer hover:scale-105 relative overflow-hidden ${
                   directionsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                style={{ transitionDelay: `${index * 100}ms`, transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)' }}
                 onClick={() => {
                   if (typeof window.ym !== 'undefined') {
                     window.ym(105955345, 'reachGoal', 'direction_click');
@@ -143,15 +155,23 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
                   window.open(direction.link, '_blank');
                 }}
               >
-                <CardContent className="p-4 sm:p-8">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent/20 transition-colors">
-                    <Icon name={direction.icon as any} size={24} className="text-accent sm:w-7 sm:h-7" />
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <CardContent className="p-4 sm:p-8 relative z-10">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 ${direction.color} rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-400`}>
+                    <Icon name={direction.icon as any} size={24} className="text-white sm:w-7 sm:h-7" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground">{direction.title}</h3>
                   <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{direction.description}</p>
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4 px-3 py-2 bg-green-50 rounded-lg border border-green-200">
+                    <span className="text-lg">💰</span>
+                    <div>
+                      <div className="text-xs text-muted-foreground">Средняя зарплата:</div>
+                      <div className="text-sm font-bold text-green-700">{direction.salary}</div>
+                    </div>
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {direction.skills.map((skill, i) => (
-                      <span key={i} className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full text-foreground">
+                      <span key={i} className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full text-foreground group-hover:bg-accent/10 transition-colors">
                         {skill}
                       </span>
                     ))}
