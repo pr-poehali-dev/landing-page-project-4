@@ -87,6 +87,9 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
                 if (typeof window.ym !== 'undefined') {
                   window.ym(105955345, 'reachGoal', 'catalog_click');
                 }
+                if (typeof window.VK !== 'undefined' && window.VK.Retargeting) {
+                  window.VK.Retargeting.Event('view_catalog');
+                }
                 setIsOpen(false);
                 window.open(referralLink, '_blank');
               }}

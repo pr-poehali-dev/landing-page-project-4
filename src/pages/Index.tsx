@@ -31,7 +31,7 @@ const Index = () => {
                   window.ym(105955345, 'reachGoal', 'catalog_click');
                 }
                 if (typeof window.VK !== 'undefined' && window.VK.Retargeting) {
-                  window.VK.Retargeting.Event('lead');
+                  window.VK.Retargeting.Event('view_catalog');
                 }
                 window.open(REFERRAL_LINK, '_blank');
               }}

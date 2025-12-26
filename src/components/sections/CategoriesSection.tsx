@@ -59,7 +59,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
                   window.ym(105955345, 'reachGoal', 'category_click');
                 }
                 if (typeof window.VK !== 'undefined' && window.VK.Retargeting) {
-                  window.VK.Retargeting.Event('lead');
+                  window.VK.Retargeting.Event('view_category');
                 }
                 window.open(category.url, '_blank');
               }}
