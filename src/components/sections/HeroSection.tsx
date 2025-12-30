@@ -19,9 +19,9 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
         <img 
           src="https://cdn.poehali.dev/projects/d946f235-e34e-46db-8e17-3468ff2dd5c5/bucket/web-des.jpg" 
           alt="Background" 
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white"></div>
       </div>
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="inline-block px-3 sm:px-4 py-1.5 text-accent text-xs sm:text-sm font-medium rounded-full mb-4 sm:mb-6 bg-gray-200">
