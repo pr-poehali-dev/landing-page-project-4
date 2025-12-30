@@ -45,7 +45,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Выберите тематику</h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-[#000000]">
             20 категорий курсов для любых целей и интересов — от IT до духовных практик
           </p>
         </div>
