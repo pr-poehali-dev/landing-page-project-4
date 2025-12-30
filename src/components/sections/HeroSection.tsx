@@ -30,7 +30,7 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 text-foreground">
           Найдите профессию<br />своей мечты
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed text-[#000000]">
           Самый полный каталог IT-курсов и профессий: 500+ специальностей, 2000+ программ обучения от ведущих онлайн-школ. 
           Подберите идеальный курс для смены карьеры или развития навыков.
         </p>
