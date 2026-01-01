@@ -4,6 +4,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import CategoriesSection from "@/components/sections/CategoriesSection";
 import ContentSections from "@/components/sections/ContentSections";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import LeadFormSection from "@/components/sections/LeadFormSection";
 import MobileMenu from "@/components/MobileMenu";
 import QuickLinks from "@/components/QuickLinks";
 import QuickLinksRSYA from "@/components/QuickLinksRSYA";
@@ -46,6 +47,7 @@ const Index = () => {
 
       <HeroSection referralLink={REFERRAL_LINK} />
       <CategoriesSection referralLink={REFERRAL_LINK} />
+      <LeadFormSection />
       <QuickLinksRSYA referralLink={REFERRAL_LINK} />
       <ContentSections referralLink={REFERRAL_LINK} />
       <TestimonialsSection referralLink={REFERRAL_LINK} />
