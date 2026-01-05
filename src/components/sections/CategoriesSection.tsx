@@ -76,7 +76,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
                 <div className="font-semibold text-foreground mb-0.5 sm:mb-1 text-sm sm:text-base">{category.name}</div>
                 <div className="text-xs sm:text-sm text-blue-600 font-medium mb-1">{category.count} курсов</div>
                 <div className="text-xs font-semibold text-foreground">
-                  💰 Зарплата: {category.salary}
+                  Зарплата: {category.salary}
                 </div>
               </div>
             </button>
