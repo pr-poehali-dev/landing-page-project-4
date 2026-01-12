@@ -20,14 +20,14 @@ const OnlineCounter = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-4 left-4 z-40 bg-white border-2 border-black rounded-lg shadow-lg px-4 py-2 flex items-center gap-2 animate-fade-in">
+    <div className="fixed bottom-4 left-2 sm:left-4 z-40 bg-white border-2 border-black rounded-lg shadow-lg px-2 py-1.5 sm:px-4 sm:py-2 flex items-center gap-1.5 sm:gap-2 animate-fade-in">
       <div className="relative">
-        <Icon name="Users" size={20} className="text-green-500" />
-        <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+        <Icon name="Users" size={16} className="text-green-500 sm:w-5 sm:h-5" />
+        <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
       </div>
       <div className="flex flex-col">
-        <span className="text-xs text-muted-foreground font-medium">Онлайн сейчас</span>
-        <span className="text-sm font-bold text-foreground">{count} человек</span>
+        <span className="text-[10px] sm:text-xs text-muted-foreground font-medium">Онлайн</span>
+        <span className="text-xs sm:text-sm font-bold text-foreground">{count}</span>
       </div>
     </div>
   );

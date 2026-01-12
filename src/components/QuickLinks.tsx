@@ -31,15 +31,15 @@ const QuickLinks = () => {
   return (
     <>
       {/* Quick Navigation */}
-      <div className="fixed bottom-56 right-4 sm:right-6 z-40 flex flex-col gap-2">
+      <div className="fixed bottom-56 right-2 sm:right-6 z-40 flex flex-col gap-1.5 sm:gap-2">
         {quickLinks.map((link, index) => (
           <a
             key={index}
             href={link.href}
-            className="group relative bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 border border-gray-200"
+            className="group relative bg-white shadow-lg hover:shadow-xl rounded-full p-2 sm:p-3 transition-all duration-300 hover:scale-110 border border-gray-200"
             title={link.label}
           >
-            <Icon name={link.icon} size={20} className="text-black" />
+            <Icon name={link.icon} size={16} className="text-black sm:w-5 sm:h-5" />
             <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-foreground text-white text-xs px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
               {link.label}
             </span>
@@ -51,10 +51,10 @@ const QuickLinks = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:right-6 z-40 bg-secondary text-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 animate-bounce-slow"
+          className="fixed bottom-4 right-2 sm:right-6 z-40 bg-secondary text-white shadow-lg hover:shadow-xl rounded-full p-2 sm:p-3 transition-all duration-300 hover:scale-110 animate-bounce-slow"
           aria-label="Наверх"
         >
-          <Icon name="ArrowUp" size={24} />
+          <Icon name="ArrowUp" size={20} className="sm:w-6 sm:h-6" />
         </button>
       )}
     </>

@@ -114,25 +114,25 @@ const RecentPurchaseNotification = () => {
 
   return (
     <div
-      className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-40 bg-white border-2 border-black rounded-lg shadow-2xl p-4 max-w-sm transition-all duration-500 ${
+      className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-40 bg-white border-2 border-black rounded-lg shadow-2xl p-2 sm:p-4 max-w-[calc(100vw-8rem)] sm:max-w-sm transition-all duration-500 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-[120%] opacity-0"
       }`}
       style={{ transform: isVisible ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(120%)' }}
     >
       <div className="flex items-start gap-3">
-        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-          <Icon name="ShoppingCart" size={20} className="text-blue-600" />
+        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+          <Icon name="ShoppingCart" size={16} className="text-blue-600 sm:w-5 sm:h-5" />
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1">
-            <span className="font-bold text-foreground text-sm">{currentPurchase.name}</span>
-            <span className="text-xs text-muted-foreground">• {currentPurchase.city}</span>
+            <span className="font-bold text-foreground text-xs sm:text-sm">{currentPurchase.name}</span>
+            <span className="text-[10px] sm:text-xs text-muted-foreground">• {currentPurchase.city}</span>
           </div>
-          <p className="text-xs text-muted-foreground mb-1">
-            записался на курс <span className="font-semibold text-blue-600">«{currentPurchase.course}»</span>
+          <p className="text-[10px] sm:text-xs text-muted-foreground mb-0.5 sm:mb-1 leading-tight">
+            записался на <span className="font-semibold text-blue-600">«{currentPurchase.course}»</span>
           </p>
-          <div className="flex items-center gap-1 text-xs text-muted-foreground">
-            <Icon name="Clock" size={12} />
+          <div className="flex items-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs text-muted-foreground">
+            <Icon name="Clock" size={10} className="sm:w-3 sm:h-3" />
             <span>{currentPurchase.time}</span>
           </div>
         </div>
@@ -140,7 +140,7 @@ const RecentPurchaseNotification = () => {
           onClick={() => setIsVisible(false)}
           className="text-muted-foreground hover:text-foreground transition-colors"
         >
-          <Icon name="X" size={16} />
+          <Icon name="X" size={14} className="sm:w-4 sm:h-4" />
         </button>
       </div>
     </div>

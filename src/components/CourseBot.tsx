@@ -176,17 +176,17 @@ const CourseBot = () => {
     <>
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-20 right-4 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-2xl flex items-center justify-center animate-bounce-slow"
+        className="fixed bottom-20 right-2 sm:right-4 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-2xl flex items-center justify-center animate-bounce-slow"
       >
         {isOpen ? (
-          <Icon name="X" size={24} className="text-white" />
+          <Icon name="X" size={20} className="text-white sm:w-6 sm:h-6" />
         ) : (
-          <Icon name="MessageCircle" size={24} className="text-white" />
+          <Icon name="MessageCircle" size={20} className="text-white sm:w-6 sm:h-6" />
         )}
       </Button>
 
       {isOpen && (
-        <Card className="fixed bottom-36 right-4 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[500px] shadow-2xl border-2 flex flex-col">
+        <Card className="fixed bottom-36 right-2 sm:right-4 z-50 w-[calc(100vw-1.5rem)] sm:w-96 h-[400px] sm:h-[500px] shadow-2xl border-2 flex flex-col">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-t-lg">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
