@@ -34,6 +34,13 @@ const Index = () => {
             <a href="#directions" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Направления</a>
             <a href="#examples" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Примеры</a>
             <a href="#reviews" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Отзывы</a>
+            <button 
+              onClick={() => setIsFavoritesOpen(true)}
+              className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 flex items-center gap-1"
+            >
+              <Icon name="Heart" size={16} />
+              Избранное
+            </button>
           </nav>
           <div className="flex items-center gap-2">
             <Button 
