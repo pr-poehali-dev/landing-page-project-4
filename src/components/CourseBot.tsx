@@ -16,7 +16,7 @@ const CourseBot = () => {
     {
       text: "Привет! Я помогу подобрать курс. Что вас интересует?",
       isBot: true,
-      options: ["Программирование", "Дизайн", "Маркетинг", "Аналитика", "Бизнес", "Другое"]
+      options: ["Программирование", "Дизайн", "Маркетинг", "Аналитика", "Менеджмент", "Бизнес"]
     }
   ]);
   const [currentStep, setCurrentStep] = useState<string>("start");
@@ -67,11 +67,18 @@ const CourseBot = () => {
             options: ["Data Science", "Бизнес-аналитика", "Веб-аналитика"]
           };
           setCurrentStep("analytics");
+        } else if (option === "Менеджмент") {
+          botResponse = {
+            text: "Какая область менеджмента?",
+            isBot: true,
+            options: ["Управление проектами", "Продакт-менеджмент", "Agile/Scrum", "Управление командой"]
+          };
+          setCurrentStep("management");
         } else if (option === "Бизнес") {
           botResponse = {
             text: "Что вас интересует?",
             isBot: true,
-            options: ["Свой бизнес", "Управление проектами", "Продажи", "Финансы"]
+            options: ["Свой бизнес", "Продажи", "Финансы", "E-commerce"]
           };
           setCurrentStep("business");
         } else {
@@ -130,11 +137,18 @@ const CourseBot = () => {
           links: [{ text: "Все курсы аналитики", url: "https://ihclick.ru/?idp=314945&link=/catalog/" }]
         };
         setCurrentStep("end");
+      } else if (currentStep === "management") {
+        botResponse = {
+          text: `Вот курсы по менеджменту:`,
+          isBot: true,
+          links: [{ text: "Все курсы по управлению", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-upravleniyu/" }]
+        };
+        setCurrentStep("end");
       } else if (currentStep === "business") {
         botResponse = {
           text: `Подобрал курсы по бизнесу:`,
           isBot: true,
-          links: [{ text: "Все бизнес-курсы", url: "https://ihclick.ru/?idp=314945&link=/catalog/" }]
+          links: [{ text: "Все бизнес-курсы", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-biznesu/" }]
         };
         setCurrentStep("end");
       } else {
@@ -156,7 +170,7 @@ const CourseBot = () => {
             {
               text: "Отлично! Что вас интересует?",
               isBot: true,
-              options: ["Программирование", "Дизайн", "Маркетинг", "Аналитика", "Бизнес", "Другое"]
+              options: ["Программирование", "Дизайн", "Маркетинг", "Аналитика", "Менеджмент", "Бизнес"]
             }
           ]);
           setCurrentStep("start");
