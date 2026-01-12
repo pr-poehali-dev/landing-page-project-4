@@ -52,8 +52,8 @@ const RecentPurchaseNotification = () => {
 
   return (
     <div
-      className={`fixed bottom-4 right-4 z-40 bg-white border-2 border-blue-500 rounded-lg shadow-2xl p-4 max-w-sm transition-all duration-500 ${
-        isVisible ? "translate-x-0 opacity-100" : "translate-x-[120%] opacity-0"
+      className={`fixed top-20 left-4 z-40 bg-white border-2 border-blue-500 rounded-lg shadow-2xl p-4 max-w-sm transition-all duration-500 ${
+        isVisible ? "translate-x-0 opacity-100" : "-translate-x-[120%] opacity-0"
       }`}
     >
       <div className="flex items-start gap-3">
