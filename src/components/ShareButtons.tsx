@@ -34,7 +34,7 @@ const ShareButtons = () => {
         <Button
           onClick={() => handleShare("vk")}
           size="sm"
-          className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#0077FF] hover:text-white border-0 transition-colors"
+          className="flex items-center gap-2 bg-black text-white hover:bg-[#0077FF] hover:text-white border-0 transition-colors"
         >
           <Icon name="Share2" size={16} />
           ВКонтакте
@@ -42,7 +42,7 @@ const ShareButtons = () => {
         <Button
           onClick={() => handleShare("telegram")}
           size="sm"
-          className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#0088cc] hover:text-white border-0 transition-colors"
+          className="flex items-center gap-2 bg-black text-white hover:bg-[#0088cc] hover:text-white border-0 transition-colors"
         >
           <Icon name="Send" size={16} />
           Telegram
@@ -50,7 +50,7 @@ const ShareButtons = () => {
         <Button
           onClick={() => handleShare("whatsapp")}
           size="sm"
-          className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#25D366] hover:text-white border-0 transition-colors"
+          className="flex items-center gap-2 bg-black text-white hover:bg-[#25D366] hover:text-white border-0 transition-colors"
         >
           <Icon name="MessageCircle" size={16} />
           WhatsApp
@@ -58,7 +58,7 @@ const ShareButtons = () => {
         <Button
           onClick={() => handleShare("twitter")}
           size="sm"
-          className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#1DA1F2] hover:text-white border-0 transition-colors"
+          className="flex items-center gap-2 bg-black text-white hover:bg-[#1DA1F2] hover:text-white border-0 transition-colors"
         >
           <Icon name="Twitter" size={16} />
           Twitter
