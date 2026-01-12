@@ -20,7 +20,7 @@ const OnlineCounter = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-4 left-4 z-40 bg-white border-2 border-green-500 rounded-lg shadow-lg px-4 py-2 flex items-center gap-2 animate-fade-in">
+    <div className="fixed bottom-4 left-4 z-40 bg-white border-2 border-black rounded-lg shadow-lg px-4 py-2 flex items-center gap-2 animate-fade-in">
       <div className="relative">
         <Icon name="Users" size={20} className="text-green-500" />
         <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>

@@ -114,7 +114,7 @@ const RecentPurchaseNotification = () => {
 
   return (
     <div
-      className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-40 bg-white border-2 border-blue-500 rounded-lg shadow-2xl p-4 max-w-sm transition-all duration-500 ${
+      className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-40 bg-white border-2 border-black rounded-lg shadow-2xl p-4 max-w-sm transition-all duration-500 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-[120%] opacity-0"
       }`}
       style={{ transform: isVisible ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(120%)' }}

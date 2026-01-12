@@ -39,7 +39,7 @@ const QuickLinks = () => {
             className="group relative bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 border border-gray-200"
             title={link.label}
           >
-            <Icon name={link.icon} size={20} className="text-secondary" />
+            <Icon name={link.icon} size={20} className="text-black" />
             <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-foreground text-white text-xs px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
               {link.label}
             </span>
