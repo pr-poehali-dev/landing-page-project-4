@@ -43,44 +43,44 @@ const CourseBot = () => {
           botResponse = {
             text: "Отлично! Какой уровень подготовки?",
             isBot: true,
-            options: ["С нуля", "Есть базовые знания", "Хочу углубиться"]
+            options: ["С нуля", "Есть базовые знания", "Продвинутый уровень"]
           };
-          setCurrentStep("programming");
+          setCurrentStep("programming_level");
         } else if (option === "Дизайн") {
           botResponse = {
             text: "Какое направление дизайна вас интересует?",
             isBot: true,
             options: ["UX/UI дизайн", "Графический дизайн", "Веб-дизайн", "3D и моушн"]
           };
-          setCurrentStep("design");
+          setCurrentStep("design_type");
         } else if (option === "Маркетинг") {
           botResponse = {
-            text: "Какая область маркетинга?",
+            text: "У вас уже есть опыт в маркетинге?",
             isBot: true,
-            options: ["SMM", "Таргет и реклама", "SEO", "Контент-маркетинг"]
+            options: ["Да, есть опыт", "Начинаю с нуля", "Хочу сменить специализацию"]
           };
-          setCurrentStep("marketing");
+          setCurrentStep("marketing_level");
         } else if (option === "Аналитика") {
           botResponse = {
-            text: "Какой вид аналитики?",
+            text: "Какой уровень подготовки?",
             isBot: true,
-            options: ["Data Science", "Бизнес-аналитика", "Веб-аналитика"]
+            options: ["Новичок", "Знаю основы", "Хочу специализироваться"]
           };
-          setCurrentStep("analytics");
+          setCurrentStep("analytics_level");
         } else if (option === "Менеджмент") {
           botResponse = {
-            text: "Какая область менеджмента?",
+            text: "Какая область менеджмента интересует?",
             isBot: true,
             options: ["Управление проектами", "Продакт-менеджмент", "Agile/Scrum", "Управление командой"]
           };
-          setCurrentStep("management");
+          setCurrentStep("management_type");
         } else if (option === "Бизнес") {
           botResponse = {
-            text: "Что вас интересует?",
+            text: "Что вас интересует в бизнесе?",
             isBot: true,
             options: ["Свой бизнес", "Продажи", "Финансы", "E-commerce"]
           };
-          setCurrentStep("business");
+          setCurrentStep("business_type");
         } else {
           botResponse = {
             text: "Давайте посмотрим все доступные направления!",
@@ -89,66 +89,205 @@ const CourseBot = () => {
           };
           setCurrentStep("end");
         }
-      } else if (currentStep === "programming") {
+      } else if (currentStep === "programming_level") {
         if (option === "С нуля") {
           botResponse = {
-            text: "Для новичков отлично подойдут курсы программирования!",
+            text: "Какое направление программирования интересует?",
             isBot: true,
-            links: [
-              { text: "Все курсы программирования", url: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/" }
-            ]
+            options: ["Python", "JavaScript/Frontend", "Java", "Mobile", "Смотреть все"]
           };
+          setCurrentStep("programming_beginner");
         } else if (option === "Есть базовые знания") {
           botResponse = {
-            text: "Рекомендую продолжить обучение программированию!",
+            text: "Хотите развиваться в направлении:",
             isBot: true,
-            links: [
-              { text: "Все курсы программирования", url: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/" }
-            ]
+            options: ["Backend", "Frontend", "Full Stack", "DevOps", "Смотреть все"]
           };
+          setCurrentStep("programming_intermediate");
         } else {
           botResponse = {
-            text: "Для продвинутых есть специализированные курсы!",
+            text: "Выберите специализацию:",
             isBot: true,
-            links: [
-              { text: "Все курсы IT", url: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/" }
-            ]
+            options: ["Архитектура", "ML/AI", "Blockchain", "Highload", "Смотреть все"]
           };
+          setCurrentStep("programming_advanced");
         }
-        setCurrentStep("end");
-      } else if (currentStep === "design") {
+      } else if (currentStep === "programming_beginner" || currentStep === "programming_intermediate" || currentStep === "programming_advanced") {
         botResponse = {
-          text: `Вот подходящие курсы по дизайну!`,
+          text: option === "Смотреть все" ? "Все курсы программирования:" : `Курсы по ${option}:`,
           isBot: true,
-          links: [{ text: "Все курсы дизайна", url: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/" }]
+          links: [{ text: "Открыть курсы программирования", url: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/" }]
         };
         setCurrentStep("end");
-      } else if (currentStep === "marketing") {
+      } else if (currentStep === "design_type") {
+        if (option === "UX/UI дизайн") {
+          botResponse = {
+            text: "Ваш опыт в дизайне?",
+            isBot: true,
+            options: ["Начинаю с нуля", "Уже делаю макеты", "Хочу в продукт", "Смотреть все"]
+          };
+          setCurrentStep("design_ux");
+        } else if (option === "Графический дизайн") {
+          botResponse = {
+            text: "Что хотите изучить?",
+            isBot: true,
+            options: ["Логотипы", "Иллюстрация", "Полиграфия", "Смотреть все"]
+          };
+          setCurrentStep("design_graphic");
+        } else if (option === "Веб-дизайн") {
+          botResponse = {
+            text: "Интересует дизайн или код?",
+            isBot: true,
+            options: ["Только дизайн", "Дизайн + HTML/CSS", "Смотреть все"]
+          };
+          setCurrentStep("design_web");
+        } else {
+          botResponse = {
+            text: "3D или анимация?",
+            isBot: true,
+            options: ["3D-моделирование", "Моушн-дизайн", "After Effects", "Смотреть все"]
+          };
+          setCurrentStep("design_3d");
+        }
+      } else if (currentStep === "design_ux" || currentStep === "design_graphic" || currentStep === "design_web" || currentStep === "design_3d") {
         botResponse = {
-          text: `Отличный выбор! Смотрите курсы по маркетингу:`,
+          text: option === "Смотреть все" ? "Все курсы дизайна:" : `Курсы по ${option}:`,
           isBot: true,
-          links: [{ text: "Все курсы маркетинга", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-marketinga/" }]
+          links: [{ text: "Открыть курсы дизайна", url: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/" }]
         };
         setCurrentStep("end");
-      } else if (currentStep === "analytics") {
+      } else if (currentStep === "marketing_level") {
+        if (option === "Да, есть опыт") {
+          botResponse = {
+            text: "Хотите углубиться в:",
+            isBot: true,
+            options: ["Performance", "Аналитику", "Стратегию", "Смотреть все"]
+          };
+          setCurrentStep("marketing_experienced");
+        } else if (option === "Начинаю с нуля") {
+          botResponse = {
+            text: "Какое направление интересует?",
+            isBot: true,
+            options: ["SMM", "Таргет", "SEO", "Контент", "Смотреть все"]
+          };
+          setCurrentStep("marketing_beginner");
+        } else {
+          botResponse = {
+            text: "Куда хотите переключиться?",
+            isBot: true,
+            options: ["Из SEO в контекст", "Из SMM в таргет", "В аналитику", "Смотреть все"]
+          };
+          setCurrentStep("marketing_switch");
+        }
+      } else if (currentStep === "marketing_experienced" || currentStep === "marketing_beginner" || currentStep === "marketing_switch") {
         botResponse = {
-          text: `Вот курсы по аналитике:`,
+          text: option === "Смотреть все" ? "Все курсы маркетинга:" : `Курсы: ${option}`,
           isBot: true,
-          links: [{ text: "Все курсы аналитики", url: "https://ihclick.ru/?idp=314945&link=/catalog/" }]
+          links: [{ text: "Открыть курсы маркетинга", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-marketinga/" }]
         };
         setCurrentStep("end");
-      } else if (currentStep === "management") {
+      } else if (currentStep === "analytics_level") {
+        if (option === "Новичок") {
+          botResponse = {
+            text: "С чего хотите начать?",
+            isBot: true,
+            options: ["Excel и BI", "SQL", "Python", "Комплексно", "Смотреть все"]
+          };
+          setCurrentStep("analytics_beginner");
+        } else if (option === "Знаю основы") {
+          botResponse = {
+            text: "Куда двигаться дальше?",
+            isBot: true,
+            options: ["Data Science", "Бизнес-аналитика", "ML/AI", "Смотреть все"]
+          };
+          setCurrentStep("analytics_intermediate");
+        } else {
+          botResponse = {
+            text: "Выберите специализацию:",
+            isBot: true,
+            options: ["Machine Learning", "Big Data", "Deep Learning", "Смотреть все"]
+          };
+          setCurrentStep("analytics_advanced");
+        }
+      } else if (currentStep === "analytics_beginner" || currentStep === "analytics_intermediate" || currentStep === "analytics_advanced") {
         botResponse = {
-          text: `Вот курсы по менеджменту:`,
+          text: option === "Смотреть все" ? "Все курсы аналитики:" : `Курсы: ${option}`,
           isBot: true,
-          links: [{ text: "Все курсы по управлению", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-upravleniyu/" }]
+          links: [{ text: "Открыть курсы аналитики", url: "https://ihclick.ru/?idp=314945&link=/catalog/data-science-kursy/" }]
         };
         setCurrentStep("end");
-      } else if (currentStep === "business") {
+      } else if (currentStep === "management_type") {
+        if (option === "Управление проектами") {
+          botResponse = {
+            text: "Опыт в управлении?",
+            isBot: true,
+            options: ["Новичок", "Есть опыт", "Хочу PMI", "Смотреть все"]
+          };
+          setCurrentStep("management_pm");
+        } else if (option === "Продакт-менеджмент") {
+          botResponse = {
+            text: "Специализация?",
+            isBot: true,
+            options: ["IT-продукты", "Digital", "С нуля", "Смотреть все"]
+          };
+          setCurrentStep("management_product");
+        } else if (option === "Agile/Scrum") {
+          botResponse = {
+            text: "Цель обучения?",
+            isBot: true,
+            options: ["Scrum Master", "Product Owner", "Общее понимание", "Смотреть все"]
+          };
+          setCurrentStep("management_agile");
+        } else {
+          botResponse = {
+            text: "Размер команды?",
+            isBot: true,
+            options: ["До 10 человек", "10-50 человек", "Крупная компания", "Смотреть все"]
+          };
+          setCurrentStep("management_team");
+        }
+      } else if (currentStep === "management_pm" || currentStep === "management_product" || currentStep === "management_agile" || currentStep === "management_team") {
         botResponse = {
-          text: `Подобрал курсы по бизнесу:`,
+          text: option === "Смотреть все" ? "Все курсы менеджмента:" : `Курсы: ${option}`,
           isBot: true,
-          links: [{ text: "Все бизнес-курсы", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-biznesu/" }]
+          links: [{ text: "Открыть курсы управления", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-upravleniyu/" }]
+        };
+        setCurrentStep("end");
+      } else if (currentStep === "business_type") {
+        if (option === "Свой бизнес") {
+          botResponse = {
+            text: "На какой стадии проект?",
+            isBot: true,
+            options: ["Только идея", "Запускаю", "Уже работает", "Смотреть все"]
+          };
+          setCurrentStep("business_own");
+        } else if (option === "Продажи") {
+          botResponse = {
+            text: "Какие продажи?",
+            isBot: true,
+            options: ["B2B", "B2C", "Онлайн", "Смотреть все"]
+          };
+          setCurrentStep("business_sales");
+        } else if (option === "Финансы") {
+          botResponse = {
+            text: "Что интересует?",
+            isBot: true,
+            options: ["Анализ", "Инвестиции", "Бухгалтерия", "Смотреть все"]
+          };
+          setCurrentStep("business_finance");
+        } else {
+          botResponse = {
+            text: "Какой маркетплейс?",
+            isBot: true,
+            options: ["Wildberries", "Ozon", "Все площадки", "Свой магазин"]
+          };
+          setCurrentStep("business_ecommerce");
+        }
+      } else if (currentStep === "business_own" || currentStep === "business_sales" || currentStep === "business_finance" || currentStep === "business_ecommerce") {
+        botResponse = {
+          text: option.includes("Смотреть") || option.includes("Все") ? "Все бизнес-курсы:" : `Курсы: ${option}`,
+          isBot: true,
+          links: [{ text: "Открыть бизнес-курсы", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-biznesu/" }]
         };
         setCurrentStep("end");
       } else {
