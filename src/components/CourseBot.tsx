@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
@@ -20,8 +20,17 @@ const CourseBot = () => {
     }
   ]);
   const [currentStep, setCurrentStep] = useState<string>("start");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const REFERRAL_LINK = "https://ihclick.ru/?idp=314945&link=/catalog/";
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const handleOptionClick = (option: string) => {
     setMessages(prev => [...prev, { text: option, isBot: false }]);
@@ -241,6 +250,7 @@ const CourseBot = () => {
                 </div>
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
         </Card>
       )}
