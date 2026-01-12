@@ -31,7 +31,7 @@ const QuickLinks = () => {
   return (
     <>
       {/* Quick Navigation */}
-      <div className="fixed bottom-20 right-4 sm:right-6 z-40 flex flex-col gap-2">
+      <div className="fixed bottom-36 right-4 sm:right-6 z-40 flex flex-col gap-2">
         {quickLinks.map((link, index) => (
           <a
             key={index}
