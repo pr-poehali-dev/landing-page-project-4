@@ -7,12 +7,16 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import MobileMenu from "@/components/MobileMenu";
 import QuickLinks from "@/components/QuickLinks";
 import QuickLinksRSYA from "@/components/QuickLinksRSYA";
+import OnlineCounter from "@/components/OnlineCounter";
+import RecentPurchaseNotification from "@/components/RecentPurchaseNotification";
 
 const Index = () => {
   const REFERRAL_LINK = "https://ihclick.ru/?idp=314945&link=/catalog/";
 
   return (
     <div className="min-h-screen bg-white">
+      <OnlineCounter />
+      <RecentPurchaseNotification />
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center bg-[#00000017]">
           <div className="text-base sm:text-xl font-bold tracking-tight text-foreground">
