@@ -28,41 +28,37 @@ const ShareButtons = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 py-8 border-t border-gray-200">
+    <div className="flex flex-col items-center gap-4 py-8 border-t border-border">
       <h3 className="text-lg font-semibold text-foreground">Поделиться с друзьями</h3>
       <div className="flex gap-3 flex-wrap justify-center">
         <Button
           onClick={() => handleShare("vk")}
-          variant="outline"
           size="sm"
-          className="flex items-center gap-2 hover:bg-[#0077FF] hover:text-white hover:border-[#0077FF] transition-colors"
+          className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#0077FF] hover:text-white border-0 transition-colors"
         >
           <Icon name="Share2" size={16} />
           ВКонтакте
         </Button>
         <Button
           onClick={() => handleShare("telegram")}
-          variant="outline"
           size="sm"
-          className="flex items-center gap-2 hover:bg-[#0088cc] hover:text-white hover:border-[#0088cc] transition-colors"
+          className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#0088cc] hover:text-white border-0 transition-colors"
         >
           <Icon name="Send" size={16} />
           Telegram
         </Button>
         <Button
           onClick={() => handleShare("whatsapp")}
-          variant="outline"
           size="sm"
-          className="flex items-center gap-2 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-colors"
+          className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#25D366] hover:text-white border-0 transition-colors"
         >
           <Icon name="MessageCircle" size={16} />
           WhatsApp
         </Button>
         <Button
           onClick={() => handleShare("twitter")}
-          variant="outline"
           size="sm"
-          className="flex items-center gap-2 hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-colors"
+          className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#1DA1F2] hover:text-white border-0 transition-colors"
         >
           <Icon name="Twitter" size={16} />
           Twitter
