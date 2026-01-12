@@ -76,8 +76,9 @@ const RecentPurchaseNotification = () => {
 
   useEffect(() => {
     const usedIndexes = new Set<number>();
+    let timeoutId: NodeJS.Timeout;
     
-    const showNotification = () => {
+    const scheduleNext = () => {
       if (usedIndexes.size === purchases.length) {
         usedIndexes.clear();
       }
@@ -96,17 +97,16 @@ const RecentPurchaseNotification = () => {
       setTimeout(() => {
         setIsVisible(false);
       }, 6000);
+
+      const nextDelay = Math.floor(Math.random() * (60000 - 40000 + 1)) + 40000;
+      timeoutId = setTimeout(scheduleNext, nextDelay);
     };
 
-    const initialDelay = setTimeout(showNotification, 5000);
-
-    const interval = setInterval(() => {
-      showNotification();
-    }, 25000);
+    const initialDelay = setTimeout(scheduleNext, Math.floor(Math.random() * 5000) + 8000);
 
     return () => {
       clearTimeout(initialDelay);
-      clearInterval(interval);
+      clearTimeout(timeoutId);
     };
   }, []);
 
