@@ -36,7 +36,7 @@ const QuickLinks = () => {
           <a
             key={index}
             href={link.href}
-            className="group relative bg-white shadow-lg hover:shadow-xl rounded-full p-2 sm:p-3 transition-all duration-300 hover:scale-110 border border-gray-200"
+            className="group relative bg-white shadow-lg hover:shadow-xl rounded-full p-2 sm:p-3 transition-all duration-300 hover:scale-110 border border-gray-200 text-[#000000]"
             title={link.label}
           >
             <Icon name={link.icon} size={16} className="text-black sm:w-5 sm:h-5" />
