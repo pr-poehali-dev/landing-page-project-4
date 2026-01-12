@@ -76,112 +76,56 @@ const CourseBot = () => {
       } else if (currentStep === "programming") {
         if (option === "С нуля") {
           botResponse = {
-            text: "Для новичков отлично подойдут курсы Python или Frontend-разработки!",
+            text: "Для новичков отлично подойдут курсы программирования!",
             isBot: true,
             links: [
-              { text: "Курсы Python", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-python/" },
-              { text: "Frontend-разработка", url: "https://ihclick.ru/?idp=314945&link=/catalog/frontend/" }
+              { text: "Все курсы программирования", url: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/" }
             ]
           };
         } else if (option === "Есть базовые знания") {
           botResponse = {
-            text: "Рекомендую углубиться в Backend или Fullstack!",
+            text: "Рекомендую продолжить обучение программированию!",
             isBot: true,
             links: [
-              { text: "Backend-разработка", url: "https://ihclick.ru/?idp=314945&link=/catalog/backend/" },
-              { text: "Fullstack", url: "https://ihclick.ru/?idp=314945&link=/catalog/fullstack/" }
+              { text: "Все курсы программирования", url: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/" }
             ]
           };
         } else {
           botResponse = {
-            text: "Для продвинутых есть курсы по архитектуре и DevOps!",
+            text: "Для продвинутых есть специализированные курсы!",
             isBot: true,
             links: [
-              { text: "DevOps", url: "https://ihclick.ru/?idp=314945&link=/catalog/devops/" },
-              { text: "Все курсы IT", url: "https://ihclick.ru/?idp=314945&link=/catalog/it-razrabotka-kursy/" }
+              { text: "Все курсы IT", url: "https://ihclick.ru/?idp=314945&link=/catalog/programmirovanie/" }
             ]
           };
         }
         setCurrentStep("end");
       } else if (currentStep === "design") {
-        const designLinks: Record<string, { text: string; url: string }[]> = {
-          "UX/UI дизайн": [
-            { text: "UX/UI дизайн курсы", url: "https://ihclick.ru/?idp=314945&link=/catalog/ux-ui/" }
-          ],
-          "Графический дизайн": [
-            { text: "Графический дизайн", url: "https://ihclick.ru/?idp=314945&link=/catalog/graficheskiy-dizayn/" }
-          ],
-          "Веб-дизайн": [
-            { text: "Веб-дизайн", url: "https://ihclick.ru/?idp=314945&link=/catalog/veb-dizayner/" }
-          ],
-          "3D и моушн": [
-            { text: "3D и анимация", url: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/" }
-          ]
-        };
         botResponse = {
-          text: `Вот подходящие курсы по направлению "${option}"!`,
+          text: `Вот подходящие курсы по дизайну!`,
           isBot: true,
-          links: designLinks[option] || [{ text: "Все курсы дизайна", url: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/" }]
+          links: [{ text: "Все курсы дизайна", url: "https://ihclick.ru/?idp=314945&link=/catalog/dizayn/" }]
         };
         setCurrentStep("end");
       } else if (currentStep === "marketing") {
-        const marketingLinks: Record<string, { text: string; url: string }[]> = {
-          "SMM": [
-            { text: "SMM-специалист", url: "https://ihclick.ru/?idp=314945&link=/catalog/smm/" }
-          ],
-          "Таргет и реклама": [
-            { text: "Таргетированная реклама", url: "https://ihclick.ru/?idp=314945&link=/catalog/targetolog/" }
-          ],
-          "SEO": [
-            { text: "SEO-специалист", url: "https://ihclick.ru/?idp=314945&link=/catalog/seo/" }
-          ],
-          "Контент-маркетинг": [
-            { text: "Контент-маркетинг", url: "https://ihclick.ru/?idp=314945&link=/catalog/kontent-marketing/" }
-          ]
-        };
         botResponse = {
-          text: `Отличный выбор! Смотрите курсы по "${option}":`,
+          text: `Отличный выбор! Смотрите курсы по маркетингу:`,
           isBot: true,
-          links: marketingLinks[option] || [{ text: "Все курсы маркетинга", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-marketinga/" }]
+          links: [{ text: "Все курсы маркетинга", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-marketinga/" }]
         };
         setCurrentStep("end");
       } else if (currentStep === "analytics") {
-        const analyticsLinks: Record<string, { text: string; url: string }[]> = {
-          "Data Science": [
-            { text: "Data Science курсы", url: "https://ihclick.ru/?idp=314945&link=/catalog/data-science-kursy/" }
-          ],
-          "Бизнес-аналитика": [
-            { text: "Бизнес-аналитик", url: "https://ihclick.ru/?idp=314945&link=/catalog/biznes-analitik/" }
-          ],
-          "Веб-аналитика": [
-            { text: "Веб-аналитика", url: "https://ihclick.ru/?idp=314945&link=/catalog/veb-analitika/" }
-          ]
-        };
         botResponse = {
-          text: `Вот курсы по "${option}":`,
+          text: `Вот курсы по аналитике:`,
           isBot: true,
-          links: analyticsLinks[option] || [{ text: "Все курсы аналитики", url: "https://ihclick.ru/?idp=314945&link=/catalog/analitika/" }]
+          links: [{ text: "Все курсы аналитики", url: "https://ihclick.ru/?idp=314945&link=/catalog/" }]
         };
         setCurrentStep("end");
       } else if (currentStep === "business") {
-        const businessLinks: Record<string, { text: string; url: string }[]> = {
-          "Свой бизнес": [
-            { text: "Предпринимательство", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-biznesu/" }
-          ],
-          "Управление проектами": [
-            { text: "Проектный менеджер", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-upravleniyu/" }
-          ],
-          "Продажи": [
-            { text: "Менеджер по продажам", url: "https://ihclick.ru/?idp=314945&link=/catalog/menedzher-po-prodazham/" }
-          ],
-          "Финансы": [
-            { text: "Финансы и инвестиции", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-finansam/" }
-          ]
-        };
         botResponse = {
-          text: `Подобрал курсы по "${option}":`,
+          text: `Подобрал курсы по бизнесу:`,
           isBot: true,
-          links: businessLinks[option] || [{ text: "Все бизнес-курсы", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-biznesu/" }]
+          links: [{ text: "Все бизнес-курсы", url: "https://ihclick.ru/?idp=314945&link=/catalog/" }]
         };
         setCurrentStep("end");
       } else {
