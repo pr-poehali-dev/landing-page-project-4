@@ -165,16 +165,16 @@ const ContentSections = ({ referralLink }: ContentSectionsProps) => {
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground">{direction.title}</h3>
                   <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{direction.description}</p>
-                  <div className="flex items-center gap-2 mb-3 sm:mb-4 px-3 py-2 bg-green-50 rounded-lg border border-green-200">
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4 px-3 py-2 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
                     <span className="text-lg">💰</span>
                     <div>
                       <div className="text-xs text-muted-foreground">Средняя зарплата:</div>
-                      <div className="text-sm font-bold text-green-700">{direction.salary}</div>
+                      <div className="text-sm font-bold text-green-700 dark:text-green-400">{direction.salary}</div>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {direction.skills.map((skill, i) => (
-                      <span key={i} className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full text-foreground group-hover:bg-accent/10 transition-colors">
+                      <span key={i} className="px-3 py-1 bg-muted text-xs font-medium rounded-full text-foreground group-hover:bg-accent/10 transition-colors">
                         {skill}
                       </span>
                     ))}
