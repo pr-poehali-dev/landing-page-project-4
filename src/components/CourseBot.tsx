@@ -199,13 +199,13 @@ const CourseBot = () => {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-muted">
             {messages.map((message, index) => (
               <div key={index} className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}>
                 <div
                   className={`max-w-[80%] rounded-2xl p-3 ${
                     message.isBot
-                      ? "bg-white border border-gray-200 text-foreground"
+                      ? "bg-card border border-border text-foreground"
                       : "bg-blue-600 text-white"
                   }`}
                 >
@@ -219,7 +219,7 @@ const CourseBot = () => {
                           onClick={() => handleOptionClick(option)}
                           size="sm"
                           variant="outline"
-                          className="text-xs h-8 bg-white hover:bg-blue-50 border-blue-200"
+                          className="text-xs h-8 bg-card hover:bg-blue-50 dark:hover:bg-blue-900/30 border-blue-200 dark:border-blue-800"
                         >
                           {option}
                         </Button>

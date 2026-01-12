@@ -42,12 +42,12 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
           alt="Background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/70 via-gray-50/60 to-gray-50/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/70 dark:from-background/90 dark:via-background/85 dark:to-background/90"></div>
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Выберите тематику</h2>
-          <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-[#000000]">
+          <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-foreground">
             20 категорий курсов для любых целей и интересов — от IT до духовных практик
           </p>
         </div>
@@ -56,7 +56,7 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
           {categories.map((category, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:scale-105 hover:bg-gradient-to-br hover:from-white hover:to-gray-50 group relative overflow-hidden ${
+              className={`flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-card border-2 border-border rounded-xl hover:border-accent hover:shadow-2xl hover:scale-105 group relative overflow-hidden ${
                 isVisible ? 'opacity-100 translate-y-0 transition-opacity duration-500' : 'opacity-0 translate-y-8'
               }`}
               style={{ transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)' }}

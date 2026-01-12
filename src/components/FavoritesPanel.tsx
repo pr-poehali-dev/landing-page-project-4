@@ -81,10 +81,10 @@ const FavoritesPanel = ({ isOpen, onClose }: FavoritesPanelProps) => {
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+        <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-muted">
           {favorites.length === 0 ? (
             <div className="text-center py-8">
-              <Icon name="Heart" size={48} className="mx-auto mb-3 text-gray-300" />
+              <Icon name="Heart" size={48} className="mx-auto mb-3 text-muted-foreground/30" />
               <p className="text-sm text-muted-foreground mb-2">Избранное пусто</p>
               <p className="text-xs text-muted-foreground">
                 Добавляйте курсы в избранное, чтобы не потерять
@@ -95,7 +95,7 @@ const FavoritesPanel = ({ isOpen, onClose }: FavoritesPanelProps) => {
               {favorites.map((course) => (
                 <div
                   key={course.id}
-                  className="bg-white rounded-lg p-3 border border-gray-200 flex items-start gap-3"
+                  className="bg-card rounded-lg p-3 border border-border flex items-start gap-3"
                 >
                   <div className="flex-1">
                     <div className="text-xs text-orange-600 font-semibold mb-1">
@@ -122,7 +122,7 @@ const FavoritesPanel = ({ isOpen, onClose }: FavoritesPanelProps) => {
                     onClick={() => removeFavorite(course.id)}
                     size="sm"
                     variant="ghost"
-                    className="text-gray-400 hover:text-red-500 p-1"
+                    className="text-muted-foreground hover:text-red-500 p-1"
                   >
                     <Icon name="Trash2" size={16} />
                   </Button>
@@ -132,7 +132,7 @@ const FavoritesPanel = ({ isOpen, onClose }: FavoritesPanelProps) => {
                 onClick={clearAll}
                 variant="outline"
                 size="sm"
-                className="w-full text-red-600 border-red-200 hover:bg-red-50"
+                className="w-full text-red-600 border-red-200 hover:bg-red-50 dark:hover:bg-red-950/30"
               >
                 Очистить все
               </Button>

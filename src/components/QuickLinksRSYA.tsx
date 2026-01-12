@@ -40,7 +40,7 @@ const QuickLinksRSYA = ({ referralLink }: QuickLinksRSYAProps) => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -62,7 +62,7 @@ const QuickLinksRSYA = ({ referralLink }: QuickLinksRSYAProps) => {
                 window.open(link.url, '_blank');
               }}
               variant="outline"
-              className="h-auto flex flex-col items-center gap-3 p-4 sm:p-6 bg-white hover:bg-secondary/5 hover:border-secondary transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+              className="h-auto flex flex-col items-center gap-3 p-4 sm:p-6 bg-card hover:bg-secondary/5 hover:border-secondary transition-all duration-300 hover:scale-105 hover:shadow-lg group"
             >
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                 <Icon name={link.icon} size={24} className="text-secondary" />

@@ -14,7 +14,7 @@ const ROICalculator = () => {
   const threeYearGain = yearlyGain * 3 - coursePrice;
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-purple-50 to-blue-50">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-foreground">

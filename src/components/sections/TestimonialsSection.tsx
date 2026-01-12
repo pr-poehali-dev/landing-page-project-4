@@ -176,7 +176,7 @@ const TestimonialsSection = ({ referralLink }: TestimonialsSectionProps) => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className={`border-2 rounded-lg px-4 sm:px-6 data-[state=open]:border-accent bg-white transition-all duration-500 ${ 
+                className={`border-2 rounded-lg px-4 sm:px-6 data-[state=open]:border-accent bg-card transition-all duration-500 ${ 
                   faqAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}

@@ -29,7 +29,7 @@ const MobileMenu = ({ referralLink, onFavoritesClick }: MobileMenuProps) => {
     <>
       {/* Burger Button */}
       <button
-        className="md:hidden p-2 text-foreground hover:bg-gray-100 rounded-lg transition-colors"
+        className="md:hidden p-2 text-foreground hover:bg-muted rounded-lg transition-colors"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
@@ -46,14 +46,14 @@ const MobileMenu = ({ referralLink, onFavoritesClick }: MobileMenuProps) => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-auto max-h-[80vh] w-48 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden rounded-bl-2xl ${
+        className={`fixed top-0 right-0 h-auto max-h-[80vh] w-48 bg-background shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden rounded-bl-2xl ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="p-4 bg-slate-200">
+        <div className="p-4 bg-muted">
           {/* Close Button */}
           <button
-            className="absolute top-2 right-2 p-1 text-foreground hover:bg-gray-100 rounded-lg"
+            className="absolute top-2 right-2 p-1 text-foreground hover:bg-background/50 rounded-lg"
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
           >
@@ -80,7 +80,7 @@ const MobileMenu = ({ referralLink, onFavoritesClick }: MobileMenuProps) => {
                     handleNavClick(item.href);
                   }
                 }}
-                className="text-sm font-semibold text-gray-900 hover:text-secondary hover:bg-gray-50 transition-colors py-2 px-2 rounded-lg"
+                className="text-sm font-semibold text-foreground hover:text-secondary hover:bg-background/50 transition-colors py-2 px-2 rounded-lg"
               >
                 {item.label}
               </a>
@@ -88,7 +88,7 @@ const MobileMenu = ({ referralLink, onFavoritesClick }: MobileMenuProps) => {
           </nav>
 
           {/* CTA Button */}
-          <div className="mt-3 pt-3 border-t border-gray-200">
+          <div className="mt-3 pt-3 border-t border-border">
             <Button 
               onClick={() => {
                 if (typeof window.ym !== 'undefined') {
