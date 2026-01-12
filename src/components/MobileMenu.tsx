@@ -4,9 +4,10 @@ import Icon from "@/components/ui/icon";
 
 interface MobileMenuProps {
   referralLink: string;
+  onFavoritesClick?: () => void;
 }
 
-const MobileMenu = ({ referralLink }: MobileMenuProps) => {
+const MobileMenu = ({ referralLink, onFavoritesClick }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
@@ -73,8 +74,7 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
                 onClick={(e) => {
                   e.preventDefault();
                   if (item.isButton) {
-                    const favBtn = document.querySelector('[class*="from-orange-500"]');
-                    if (favBtn instanceof HTMLElement) favBtn.click();
+                    onFavoritesClick?.();
                     setIsOpen(false);
                   } else {
                     handleNavClick(item.href);

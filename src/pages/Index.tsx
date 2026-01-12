@@ -11,17 +11,19 @@ import OnlineCounter from "@/components/OnlineCounter";
 import RecentPurchaseNotification from "@/components/RecentPurchaseNotification";
 import ROICalculator from "@/components/ROICalculator";
 import CourseBot from "@/components/CourseBot";
-import FavoritesButton from "@/components/FavoritesButton";
+import FavoritesPanel from "@/components/FavoritesPanel";
+import { useState } from "react";
 
 const Index = () => {
   const REFERRAL_LINK = "https://ihclick.ru/?idp=314945&link=/catalog/";
+  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-white">
       <OnlineCounter />
       <RecentPurchaseNotification />
       <CourseBot />
-      <FavoritesButton />
+      <FavoritesPanel isOpen={isFavoritesOpen} onClose={() => setIsFavoritesOpen(false)} />
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center bg-[#00000017]">
           <div className="text-base sm:text-xl font-bold tracking-tight text-foreground">
@@ -32,16 +34,6 @@ const Index = () => {
             <a href="#directions" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Направления</a>
             <a href="#examples" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Примеры</a>
             <a href="#reviews" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">Отзывы</a>
-            <button 
-              onClick={() => {
-                const favBtn = document.querySelector('[class*="from-orange-500"]');
-                if (favBtn instanceof HTMLElement) favBtn.click();
-              }}
-              className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 flex items-center gap-1"
-            >
-              <Icon name="Heart" size={16} />
-              Избранное
-            </button>
           </nav>
           <div className="flex items-center gap-2">
             <Button 
@@ -58,7 +50,7 @@ const Index = () => {
             >
               Выбрать курс
             </Button>
-            <MobileMenu referralLink={REFERRAL_LINK} />
+            <MobileMenu referralLink={REFERRAL_LINK} onFavoritesClick={() => setIsFavoritesOpen(true)} />
           </div>
         </div>
       </header>
