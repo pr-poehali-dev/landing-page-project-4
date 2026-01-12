@@ -12,19 +12,32 @@ import RecentPurchaseNotification from "@/components/RecentPurchaseNotification"
 import ROICalculator from "@/components/ROICalculator";
 import CourseBot from "@/components/CourseBot";
 import FavoritesPanel from "@/components/FavoritesPanel";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
   const REFERRAL_LINK = "https://ihclick.ru/?idp=314945&link=/catalog/";
   const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    return saved === 'true';
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('darkMode', String(isDarkMode));
+  }, [isDarkMode]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <OnlineCounter />
       <RecentPurchaseNotification />
       <CourseBot />
       <FavoritesPanel isOpen={isFavoritesOpen} onClose={() => setIsFavoritesOpen(false)} />
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center bg-[#00000017]">
           <div className="text-base sm:text-xl font-bold tracking-tight text-foreground">
             Энциклопедия Профессий
@@ -43,6 +56,17 @@ const Index = () => {
             </button>
           </nav>
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
+              aria-label="Переключить тему"
+            >
+              {isDarkMode ? (
+                <Icon name="Sun" size={20} className="text-foreground" />
+              ) : (
+                <Icon name="Moon" size={20} className="text-foreground" />
+              )}
+            </button>
             <Button 
               onClick={() => {
                 if (typeof window.ym !== 'undefined') {

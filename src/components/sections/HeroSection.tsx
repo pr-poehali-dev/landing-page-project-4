@@ -21,7 +21,7 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
           alt="Background" 
           className="w-full h-full object-cover object-[center_30%] sm:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background dark:from-background/90 dark:via-background/80 dark:to-background"></div>
       </div>
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="inline-block px-3 sm:px-4 py-1.5 text-accent text-xs sm:text-sm font-medium rounded-full mb-4 sm:mb-6 bg-amber-200">
@@ -30,7 +30,7 @@ const HeroSection = ({ referralLink }: HeroSectionProps) => {
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 text-foreground">
           Найдите профессию<br />своей мечты
         </h1>
-        <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed text-[#000000]">
+        <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed text-foreground">
           Самый полный каталог IT-курсов и профессий: 500+ специальностей, 2000+ программ обучения от ведущих онлайн-школ. 
           Подберите идеальный курс для смены карьеры или развития навыков.
         </p>
