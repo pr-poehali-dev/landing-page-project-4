@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useFavorites } from "@/hooks/useFavorites";
 
 interface CategoriesSectionProps {
   referralLink: string;
@@ -8,6 +9,7 @@ interface CategoriesSectionProps {
 
 const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
   const { ref, isVisible } = useScrollAnimation(0.1);
+  const { addFavorite, isFavorite } = useFavorites();
   
   const categories = [
     { name: "💰 Финансы", count: 389, icon: "DollarSign", salary: "до 250 000 ₽", color: "bg-green-500", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-finansam/" },
@@ -52,34 +54,56 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
 
         <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {categories.map((category, index) => (
-            <button
+            <div
               key={index}
-              onClick={() => {
-                if (typeof window.ym !== 'undefined') {
-                  window.ym(105955345, 'reachGoal', 'category_click');
-                }
-                if (typeof window.VK !== 'undefined' && window.VK.Retargeting) {
-                  window.VK.Retargeting.Event('view_category');
-                }
-                window.open(category.url, '_blank');
-              }}
               className={`flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-accent hover:shadow-2xl hover:scale-105 hover:bg-gradient-to-br hover:from-white hover:to-gray-50 group relative overflow-hidden ${
                 isVisible ? 'opacity-100 translate-y-0 transition-opacity duration-500' : 'opacity-0 translate-y-8'
               }`}
               style={{ transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)' }}
             >
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  addFavorite({
+                    id: `cat-${index}`,
+                    title: category.name,
+                    url: category.url,
+                    category: "Тематика"
+                  });
+                }}
+                className="absolute top-2 right-2 z-20 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+              >
+                <Icon
+                  name="Heart"
+                  size={16}
+                  className={isFavorite(`cat-${index}`) ? "text-red-500 fill-red-500" : "text-gray-400"}
+                />
+              </button>
               <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-              <div className={`w-10 h-10 sm:w-12 sm:h-12 ${category.color} rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 relative z-10`}>
-                <Icon name={category.icon as any} size={20} className="text-white sm:w-6 sm:h-6" />
-              </div>
-              <div className="text-center relative z-10">
-                <div className="font-semibold text-foreground mb-0.5 sm:mb-1 text-sm sm:text-base">{category.name}</div>
-                <div className="text-xs sm:text-sm text-blue-600 font-medium mb-1">{category.count} курсов</div>
-                <div className="text-xs font-semibold text-foreground">
-                  Зарплата: {category.salary}
+              <button
+                onClick={() => {
+                  if (typeof window.ym !== 'undefined') {
+                    window.ym(105955345, 'reachGoal', 'category_click');
+                  }
+                  if (typeof window.VK !== 'undefined' && window.VK.Retargeting) {
+                    window.VK.Retargeting.Event('view_category');
+                  }
+                  window.open(category.url, '_blank');
+                }}
+                className="flex flex-col items-center gap-2 w-full"
+              >
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 ${category.color} rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 relative z-10`}>
+                  <Icon name={category.icon as any} size={20} className="text-white sm:w-6 sm:h-6" />
                 </div>
-              </div>
-            </button>
+                <div className="text-center relative z-10">
+                  <div className="font-semibold text-foreground mb-0.5 sm:mb-1 text-sm sm:text-base">{category.name}</div>
+                  <div className="text-xs sm:text-sm text-blue-600 font-medium mb-1">{category.count} курсов</div>
+                  <div className="text-xs font-semibold text-foreground">
+                    Зарплата: {category.salary}
+                  </div>
+                </div>
+              </button>
+            </div>
           ))}
         </div>
 
