@@ -9,7 +9,7 @@ interface CategoriesSectionProps {
 
 const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
   const { ref, isVisible } = useScrollAnimation(0.1);
-  const { addFavorite, isFavorite } = useFavorites();
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
   
   const categories = [
     { name: "💰 Финансы", count: 389, icon: "DollarSign", salary: "до 250 000 ₽", color: "bg-green-500", url: "https://ihclick.ru/?idp=314945&link=/catalog/kursy-po-finansam/" },
@@ -64,12 +64,17 @@ const CategoriesSection = ({ referralLink }: CategoriesSectionProps) => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  addFavorite({
-                    id: `cat-${index}`,
-                    title: category.name,
-                    url: category.url,
-                    category: "Тематика"
-                  });
+                  const courseId = `cat-${index}`;
+                  if (isFavorite(courseId)) {
+                    removeFavorite(courseId);
+                  } else {
+                    addFavorite({
+                      id: courseId,
+                      title: category.name,
+                      url: category.url,
+                      category: "Тематика"
+                    });
+                  }
                 }}
                 className="absolute top-2 right-2 z-20 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
               >

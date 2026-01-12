@@ -14,6 +14,7 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
     { label: "Направления", href: "#directions" },
     { label: "Примеры", href: "#examples" },
     { label: "Отзывы", href: "#reviews" },
+    { label: "💗 Избранное", href: "#favorites", isButton: true },
   ];
 
   const handleNavClick = (href: string) => {
@@ -71,7 +72,13 @@ const MobileMenu = ({ referralLink }: MobileMenuProps) => {
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleNavClick(item.href);
+                  if (item.isButton) {
+                    const favBtn = document.querySelector('[class*="from-orange-500"]');
+                    if (favBtn instanceof HTMLElement) favBtn.click();
+                    setIsOpen(false);
+                  } else {
+                    handleNavClick(item.href);
+                  }
                 }}
                 className="text-sm font-semibold text-gray-900 hover:text-secondary hover:bg-gray-50 transition-colors py-2 px-2 rounded-lg"
               >
